@@ -1,0 +1,11 @@
+{% include '_partials/head.njk' %}
+
+{% include '_partials/pagination.njk' %}
+
+{% for post in posts %}
+  {% include '_partials/post-item.njk' %}
+{% endfor %}
+
+{% include '_partials/pagination.njk' %}
+
+{% include '_partials/foot.njk' %}

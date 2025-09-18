@@ -1,0 +1,21 @@
+<div class="extra-pagination">
+  <nav class="pagination">
+    <span class="next-page">
+      {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}">
+          <i class="fa-solid fa-clock-rotate-left"></i> Older
+        </a>
+      {% endif %}
+    </span>
+    <span class="pagination-info">
+      Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+    </span>
+    <span class="previous-page">
+      {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}">
+          Newer <i class="fa-solid fa-clock-rotate-left mirror"></i>
+        </a>
+      {% endif %}
+    </span>
+  </nav>
+</div>

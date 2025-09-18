@@ -1,0 +1,9 @@
+---
+permalink: /sitemap.txt
+layout: null
+---
+{% for item in collections.all %}{{ site.url }}{{ item.url }}
+{% endfor %}
+
+{% for item in collections.static %}{{ site.url }}{{ item.url }}
+{% endfor %}

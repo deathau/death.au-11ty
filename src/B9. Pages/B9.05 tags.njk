@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true
+  filter:
+    - all
+    - everything
+    - everything-reversed
+permalink: /tag/{{ tag | slug }}/
+layout: home
+---
+
+<main class="card">
+  <h1>Posts tagged “{{ tag }}”</h1>
+</main>
+
+{% set taglist = collections[ tag ] %}
+{% for post in taglist | reverse %}
+  {% include "_partials/post-item.njk" %}
+{% endfor %}

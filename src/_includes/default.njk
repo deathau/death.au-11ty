@@ -1,0 +1,44 @@
+{% include '_partials/head-default-title.njk' %}
+
+<article>
+  {% if date %}
+  <aside class="post-info">
+    <a href="{{ url }}">
+      <i class="fa-solid fa-clock"></i>
+      <time class="dt-published" datetime="{{ date | dateISOString }}">
+        {{ date | formatDate }}</time>
+    </a>
+  </aside>
+  {% endif %}
+  {% if image %}
+    <img class="featured" src="{{ image }}" alt="{{ title }}"/>
+  {% endif %}
+
+
+  {% if emoji %}
+    <i data-emoji="{{emoji}}">{{emoji}}</i>
+  {% endif %}
+  <p>
+    {{ content| safe }}
+  </p>
+
+  {% if status_url or external_url %}
+    <aside class="post-info">
+      {% if status_url %}
+        <a class="status_url" href="{{status_url}}" target="_blank"><i class="omg-icon omg-prami"></i> via status.lol</a>
+      {% endif %}
+      {% if external_url %}
+        <a class="external_url" href="{{external_url}}" target="_blank"><i class="omg-icon omg-fediverse"></i> Interact on the Fediverse</a>
+      {% endif %}
+    </aside>
+  {% endif %}
+  {% if tags %}
+    <aside class="post-tags">
+      {% for tag in tags %}
+        <a class="tag" href="/tag/{{ tag | slug }}/">{{ tag }}</a>
+      {% endfor %}
+    </aside>
+  {% endif %}
+</article>
+
+{% include '_partials/foot.njk' %}

@@ -1,0 +1,21 @@
+<div class="extra-pagination">
+  <nav class="pagination">
+    <span class="next-page">
+      {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}#projects">
+          <i class="fa-solid fa-arrow-left"></i> Previous
+        </a>
+      {% endif %}
+    </span>
+    <span class="pagination-info">
+      Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+    </span>
+    <span class="previous-page">
+      {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}#projects">
+          Next <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      {% endif %}
+    </span>
+  </nav>
+</div>
