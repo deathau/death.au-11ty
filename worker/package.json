@@ -1,0 +1,19 @@
+{
+  "name": "status",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.38.0"
+  },
+  "dependencies": {
+    "colortranslator": "^5.0.0",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.45",
+    "yaml": "^2.4.2"
+  }
+}

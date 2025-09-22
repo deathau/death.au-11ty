@@ -1,4 +1,4 @@
 name = "status"
-main = "worker/worker.js"
+main = "./worker.js"
 compatibility_date = "2024-05-09"
 workers_dev = true
