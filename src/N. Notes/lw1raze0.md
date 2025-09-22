@@ -6,6 +6,7 @@ permalink: /n.lw1raze0/
 emoji: 💬
 external_url: https://death.id.au/objects/0e03068e-1666-3f17-75ce-552183016223
 status_url: https://deathau.status.lol/663f17791bfc3
+background: "#dbe7ff"
 ---
 
 Sometimes I just can't help myself. My https://deathau.weblog.lol site now has a fediverse "login" — you enter fediverse handle and it will look up your avatar and subscribe link via webfinger, saving those to local storage.

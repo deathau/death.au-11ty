@@ -7,6 +7,7 @@ permalink: /n.mfqggqy0/
 emoji: 🤔
 external_url: https://death.id.au/objects/186d4c09-1968-ccf7-95f0-3f3216104205
 status_url: https://deathau.status.lol/68ccf7518aba6
+background: "#ffeadb"
 ---
 
 It turns out it did *not* work properly the first time, but after some debugging, it looks like we should be good to go now. I just need to double-check...

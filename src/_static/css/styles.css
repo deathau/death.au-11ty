@@ -83,6 +83,14 @@ nav.pagination,
   box-shadow: var(--shadow);
 }
 
+article{
+  background-color:
+    light-dark(var(--dynamic-color, var(--card-bg)),
+    /* var(--card-bg)); */
+    color-mix(in srgb, var(--dynamic-color, var(--card-bg)) 8%, var(--card-bg)));
+}
+
+
 article:has([data-emoji]) {
   min-height: 10em;
   display:block;

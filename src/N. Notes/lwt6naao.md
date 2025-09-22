@@ -7,6 +7,7 @@ emoji: ⌨️
 external_url: https://death.id.au/objects/0e03068e-1166-5865-7405-6df270227544
 status_url: https://deathau.status.lol/6658656c0f0d3
 tags: [MAUI,Blazor,omg.lol,some.pics]
+background: "#ededed"
 ---
 
 I think my next hyperfocus is going to be building a multiplatform status.log equivalent.

@@ -6,6 +6,7 @@ permalink: /n.ly4f1qz4/
 emoji: 👀
 external_url: null
 status_url: https://deathau.status.lol/6683f9c230b2f
+background: "#efe7f3"
 ---
 
 @steele, if you see this, you'll know that some people do look

@@ -6,6 +6,7 @@ permalink: /n.m136hmig/
 emoji: 🏨
 external_url: https://death.id.au/objects/0e03068e-1266-e67a-b7ab-ecd267513472
 status_url: https://deathau.status.lol/66e67a931354c
+background: "#ffdbdb"
 ---
 
 I've been pretty lucky in my life - never broken a bone.

@@ -6,6 +6,7 @@ permalink: /n.lxg2tao0/
 emoji: 🔄
 external_url: https://death.id.au/objects/0e03068e-1866-6d84-d452-ea3313267688
 status_url: https://deathau.status.lol/666d84c83b2f7
+background: "#dbf3ff"
 ---
 
 Pull to refresh is a weird concept.

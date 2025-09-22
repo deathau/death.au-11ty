@@ -7,6 +7,7 @@ emoji: 🗂️
 external_url: https://death.id.au/objects/0e03068e-1466-46ab-53d8-ac8900149667
 status_url: https://deathau.status.lol/6646ab4fa17d8
 tags: [wavebox,Johnny Decimal]
+background: "#ffe7db"
 ---
 
 A new version of [#Wavebox](/tag/wavebox){.tag} has afforded me the incentive to reorganise all my apps/tabs.

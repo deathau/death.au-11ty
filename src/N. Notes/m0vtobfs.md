@@ -6,6 +6,7 @@ permalink: /n.m0vtobfs/
 emoji: 🗺️
 external_url: https://death.id.au/objects/0e03068e-2466-dfb1-4167-b95934026045
 status_url: https://deathau.status.lol/66dfb121274a5
+background: "#e2f7f7"
 ---
 
 I'm making progress in my Safari safari. I have the full cycle of communication from web view → app → extension → app extension → app → web view. <https://death.id.au/b4.0015>

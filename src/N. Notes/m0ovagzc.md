@@ -6,6 +6,7 @@ permalink: /n.m0ovagzc/
 emoji: ⛺
 external_url: https://death.id.au/objects/0e03068e-1166-d946-7a9f-8b5955914727
 status_url: https://deathau.status.lol/66d9465b689bb
+background: "#eaf6e4"
 ---
 
 Setting up camp after the first leg of my Safari safari. I feel like I've learned a lot but gotten nowhere?

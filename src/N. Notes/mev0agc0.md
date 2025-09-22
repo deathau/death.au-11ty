@@ -6,6 +6,7 @@ permalink: /n.mev0agc0/
 emoji: 🎮️
 external_url: https://death.id.au/objects/0e03068e-3968-aff3-5d93-413635079882
 status_url: https://deathau.status.lol/68aff31eb5090
+background: "#eeeeee"
 ---
 
 Getting back into playing Pokémon on my old DS lite.

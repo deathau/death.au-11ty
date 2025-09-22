@@ -1,4 +1,4 @@
-  <article>
+  <article {% if post.data.background %}style="--dynamic-color:{{post.data.background}};"{% endif %}>
     {% if post.data.date %}
     <aside class="post-info">
       <a href="{{ post.url }}">

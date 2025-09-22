@@ -6,6 +6,7 @@ permalink: /n.lv1ymfg0/
 emoji: 📧
 external_url: https://death.id.au/objects/0e03068e-9966-1e10-7259-1c8160567430
 status_url: https://deathau.status.lol/661e106e34888
+background: "#e2f0f7"
 ---
 
 Okay. Fastmail is cool.

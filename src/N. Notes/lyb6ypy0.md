@@ -6,6 +6,7 @@ permalink: /n.lyb6ypy0/
 emoji: 🥱
 external_url: https://death.id.au/objects/0e03068e-2366-8a3a-28f1-783851907599
 status_url: https://deathau.status.lol/668a3a1712a66
+background: "#ffeadb
 ---
 
 Why is it that after a nap I feel groggier than when I lay down in the first place?

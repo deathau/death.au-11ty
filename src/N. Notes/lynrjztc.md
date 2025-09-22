@@ -6,6 +6,7 @@ permalink: /n.lynrjztc/
 emoji: 🥱
 external_url: https://death.id.au/objects/0e03068e-1066-95d3-9e55-0f7399134657
 status_url: https://deathau.status.lol/6695d38a2c705
+background: "#ffeadb"
 ---
 
 Tired this morning
