@@ -1,0 +1,9 @@
+<script src="/js/luxon.min.js" crossorigin="anonymous"></script>
+<script src="/js/fediverse.js"></script>
+<script>
+  document.querySelectorAll('time:not(.dt-start):not(.dt-end)').forEach(time => {
+    const datetime = luxon.DateTime.fromISO(time.getAttribute('datetime'))
+    time.innerText = datetime.toRelative()
+  });
+fediverse()
+</script>

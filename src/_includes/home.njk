@@ -1,5 +1,19 @@
-{% include '_partials/head.njk' %}
+---
+layout: base.njk
+---
+  <main class="h-card home">
+    {{ content | safe }}
+  </main>
 
-  {{ content | safe }}
-
-{% include '_partials/foot.njk' %}
+  {% for post in collections.everything.slice(0,15) %}
+    {% include '_partials/post-item.njk' %}
+  {% endfor %}
+  <div class="extra-pagination">
+    <nav class="pagination">
+      <span class="previous-page">
+        <a href="/blog/2/">
+          More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </span>
+    </nav>
+  </div>

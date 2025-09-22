@@ -1,15 +1,15 @@
-{% include '_partials/head.njk' %}
+---
+layout: base.njk
+---
 
-<main class="card">
-  {{ content | safe }}
-  <aside class="post-info">
-    <a href="{{ permalink }}">
-    <i class="fa-solid fa-clock"></i>
-    Last Updated
-    <time class="dt-published" datetime="{{ date | dateISOString }}">
-        {{ date | formatDate }}</time>
-    </a>
-  </aside> 
-</main>
-
-{% include '_partials/foot.njk' %}
+  <main class="card">
+    {{ content | safe }}
+    <aside class="post-info">
+      <a href="{{ permalink }}">
+      <i class="fa-solid fa-clock"></i>
+      Last Updated
+      <time class="dt-published" datetime="{{ date | dateISOString }}">
+          {{ date | formatDate }}</time>
+      </a>
+    </aside> 
+  </main>
