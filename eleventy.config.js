@@ -3,6 +3,7 @@ import ExcerptGenerator from "./_scripts/excerptgenerator.js";
 import markdownIt from "markdown-it";
 import markdownItBracketedSpans from "markdown-it-bracketed-spans";
 import markdownItAttrs from "markdown-it-attrs";
+import cacheBuster from "@mightyplow/eleventy-plugin-cache-buster";
 
 export default async function(eleventyConfig) {
 
@@ -82,6 +83,8 @@ export default async function(eleventyConfig) {
 
   // Pass-through files
   eleventyConfig.addPassthroughCopy({"src/_static":"."});
+  const cacheBusterOptions = {};
+  eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
   // global data
   const metadata = {
