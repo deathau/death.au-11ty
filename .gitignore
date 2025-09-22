@@ -2,3 +2,7 @@ node_modules/
 old/
 _site/
 .obsidian/
+
+# wrangler project
+.dev.vars
+.wrangler/
