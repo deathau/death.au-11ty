@@ -4,7 +4,7 @@ title: 📹 So, I did a thing and made a video:\r ![Lilith...
 date: 2024-10-03T17:08:38+10:00
 permalink: /n.m1sygesw/
 emoji: 📹
-external_url: https://monrepos.casa/objects/0e03068e-1066-fe43-1fba-8d9145209684
+external_url: https://death.id.au/objects/0e03068e-1066-fe43-1fba-8d9145209684
 status_url: https://deathau.status.lol/66fe42f66818f
 ---
 

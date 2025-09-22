@@ -4,7 +4,7 @@ title: 💡 Charlie and the Chocolate factory, but rewritten in the modern...
 date: 2024-11-21T20:21:09+11:00
 permalink: /n.m3r3rki0/
 emoji: 💡
-external_url: https://monrepos.casa/objects/0e03068e-1467-3efb-bb6f-54d833153613
+external_url: https://death.id.au/objects/0e03068e-1467-3efb-bb6f-54d833153613
 status_url: https://deathau.status.lol/673efb85bd2dc
 ---
 

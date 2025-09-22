@@ -4,7 +4,7 @@ title: ⌨️ I think my next hyperfocus is going to be building...
 date: 2024-05-30T21:39:24+10:00
 permalink: /n.lwt6naao/
 emoji: ⌨️
-external_url: https://monrepos.casa/objects/0e03068e-1166-5865-7405-6df270227544
+external_url: https://death.id.au/objects/0e03068e-1166-5865-7405-6df270227544
 status_url: https://deathau.status.lol/6658656c0f0d3
 tags: [MAUI,Blazor,omg.lol,some.pics]
 ---

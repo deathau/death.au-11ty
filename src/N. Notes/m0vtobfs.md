@@ -4,7 +4,7 @@ title: 🗺️ I'm making progress in my Safari safari. I have the...
 date: 2024-09-10T12:38:25+10:00
 permalink: /n.m0vtobfs/
 emoji: 🗺️
-external_url: https://monrepos.casa/objects/0e03068e-2466-dfb1-4167-b95934026045
+external_url: https://death.id.au/objects/0e03068e-2466-dfb1-4167-b95934026045
 status_url: https://deathau.status.lol/66dfb121274a5
 ---
 

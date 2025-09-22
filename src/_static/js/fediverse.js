@@ -171,7 +171,7 @@ function renderReplies(status, replies, replyContainer, template, sharingUrl) {
 
 async function loadContext(status, replyContainer, template, sharingUrl) {
   try{
-    const res = await fetch(`https://monrepos.casa/api/v1/statuses/${status.id}/context`, {
+    const res = await fetch(`https://death.id.au/api/v1/statuses/${status.id}/context`, {
       headers: {
         'Authorization': 'Basic Ym90OjJuUmZhTGJ1c3cyaFhA'
       }
@@ -200,7 +200,7 @@ function fediverse() {
     el.href = href
 
     try{
-      const res = await fetch(`https://monrepos.casa/api/v2/search?type=statuses&q=${orig_href}`, {
+      const res = await fetch(`https://death.id.au/api/v2/search?type=statuses&q=${orig_href}`, {
         headers: {
           'Authorization': 'Basic Ym90OjJuUmZhTGJ1c3cyaFhA'
         }

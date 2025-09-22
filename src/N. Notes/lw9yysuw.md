@@ -4,7 +4,7 @@ title: "🗂️ A new version of #Wavebox has afforded me the incentive..."
 date: 2024-05-17T10:56:47+10:00
 permalink: /n.lw9yysuw/
 emoji: 🗂️
-external_url: https://monrepos.casa/objects/0e03068e-1466-46ab-53d8-ac8900149667
+external_url: https://death.id.au/objects/0e03068e-1466-46ab-53d8-ac8900149667
 status_url: https://deathau.status.lol/6646ab4fa17d8
 tags: [wavebox,Johnny Decimal]
 ---

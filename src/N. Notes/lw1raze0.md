@@ -4,7 +4,7 @@ title: 💬 Sometimes I just can't help myself. My https://deathau.weblog.lol...
 date: 2024-05-11T17:00:09+10:00
 permalink: /n.lw1raze0/
 emoji: 💬
-external_url: https://monrepos.casa/objects/0e03068e-1666-3f17-75ce-552183016223
+external_url: https://death.id.au/objects/0e03068e-1666-3f17-75ce-552183016223
 status_url: https://deathau.status.lol/663f17791bfc3
 ---
 

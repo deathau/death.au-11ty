@@ -4,7 +4,7 @@ title: 🤔 #ActivityPub, #Microformats, #Micropub... These all describe the sam
 date: 2024-02-13T10:29:02+11:00
 permalink: /n.lsjkfvow/
 emoji: 🤔
-external_url: https://monrepos.casa/objects/0e03068e-1165-caa9-c153-e0c849814335
+external_url: https://death.id.au/objects/0e03068e-1165-caa9-c153-e0c849814335
 status_url: https://deathau.status.lol/65caa9be33877
 tags: [ActivityPub,Microformats,Micropub]
 ---

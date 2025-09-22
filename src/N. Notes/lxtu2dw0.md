@@ -4,7 +4,7 @@ title: 🙈 Why do some sites support a dark theme, but still...
 date: 2024-06-25T13:14:42+10:00
 permalink: /n.lxtu2dw0/
 emoji: 🙈
-external_url: https://monrepos.casa/objects/0e03068e-3266-7a36-3151-440059040641
+external_url: https://death.id.au/objects/0e03068e-3266-7a36-3151-440059040641
 status_url: https://deathau.status.lol/667a3622a7cec
 ---
 

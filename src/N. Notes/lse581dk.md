@@ -4,7 +4,7 @@ title: 🤔 I'm playing around with omg.lol, which allows you to purchase...
 date: 2024-02-09T15:24:11+11:00
 permalink: /n.lse581dk/
 emoji: 🤔
-external_url: https://monrepos.casa/objects/0e03068e-9165-c5a8-eee6-ba8809107254
+external_url: https://death.id.au/objects/0e03068e-9165-c5a8-eee6-ba8809107254
 status_url: https://deathau.status.lol/65c5a8ebd3f23
 ---
 
