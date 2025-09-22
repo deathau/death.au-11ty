@@ -1,6 +1,7 @@
 {% set title="Death.au's Domain" %}
 {% extends "base.njk" %}
 
+{% block content %}
 <article>
   {% if date %}
   <aside class="post-info">
@@ -41,3 +42,4 @@
     </aside>
   {% endif %}
 </article>
+{% endblock %}

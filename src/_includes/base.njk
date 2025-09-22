@@ -6,8 +6,10 @@
 </head>
 <body>
   {% include '_partials/header.njk' %}
-
+  
+  {% block content %}
   {{ content | safe }}
+  {% endblock %}
 
   {% include '_partials/footer.njk' %}
   {% include '_partials/scripts.njk' %}
