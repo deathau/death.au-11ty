@@ -1,4 +1,7 @@
-  <article {% if post.data.background %}style="--dynamic-color:{{post.data.background}};"{% endif %}>
+  <article style="
+    {% if post.data.background %}--dynamic-color:{{post.data.background}};{% endif %}
+    {% if post.data.dark_background %}--dynamic-color-dark:{{post.data.dark_background}};{% endif %}
+  ">
     {% if post.data.date %}
     <aside class="post-info">
       <a href="{{ post.url }}">

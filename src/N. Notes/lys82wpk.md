@@ -6,6 +6,7 @@ permalink: /n.lys82wpk/
 emoji: 🧠
 external_url: https://death.id.au/objects/0e03068e-1266-99f0-d43d-1e1967032118
 status_url: https://deathau.status.lol/6699f0bf403bb
+dark_background: "#240012"
 background: "#ffdbf9"
 ---
 

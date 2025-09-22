@@ -85,9 +85,10 @@ nav.pagination,
 
 article{
   background-color:
-    light-dark(var(--dynamic-color, var(--card-bg)),
-    /* var(--card-bg)); */
-    color-mix(in srgb, var(--dynamic-color, var(--card-bg)) 8%, var(--card-bg)));
+    light-dark(
+      var(--dynamic-color, var(--card-bg)),
+      var(--dynamic-color-dark, var(--card-bg))
+    );
 }
 
 

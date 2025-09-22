@@ -7,6 +7,7 @@ emoji: ✨
 external_url: https://death.id.au/objects/0e03068e-5266-1ca7-3a46-bea208916986
 status_url: https://deathau.status.lol/661ca73625395
 tags: [Bluey]
+dark_background: "#240C00"
 background: "#ffdbdb"
 ---
 

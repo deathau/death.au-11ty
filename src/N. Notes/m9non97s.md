@@ -6,6 +6,7 @@ permalink: /n.m9non97s/
 emoji: 🎵
 external_url: https://death.id.au/objects/0e03068e-1468-031e-27cf-0cd010939293
 status_url: https://deathau.status.lol/68031e114c876
+dark_background: "#0C0C18"
 background: "#e7ebf3"
 ---
 

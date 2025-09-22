@@ -6,6 +6,7 @@ permalink: /n.lygywups/
 emoji: 🇦🇺
 external_url: https://death.id.au/objects/0e03068e-6866-8f8e-8342-d91490914473
 status_url: https://deathau.status.lol/668f8e704bafa
+dark_background: "#111111"
 background: "#eeeeee"
 ---
 

@@ -6,6 +6,7 @@ permalink: /n.m0lrycjk/
 emoji: 🧭
 external_url: null
 status_url: https://deathau.status.lol/66d66be0e166a
+dark_background: "#1D1608"
 background: "#f7e9e2"
 ---
 

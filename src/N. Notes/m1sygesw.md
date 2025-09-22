@@ -6,6 +6,7 @@ permalink: /n.m1sygesw/
 emoji: 📹
 external_url: https://death.id.au/objects/0e03068e-1066-fe43-1fba-8d9145209684
 status_url: https://deathau.status.lol/66fe42f66818f
+dark_background: "#180C18"
 background: "#efe7f3"
 ---
 

@@ -7,6 +7,7 @@ emoji: 📺️
 external_url: https://death.id.au/objects/0e03068e-1566-99a6-bc6f-006521737791
 status_url: https://deathau.status.lol/6699a6a7a8613
 tags: [Lucasfilm,Star Wars,Thrawn,Game Of Thrones]
+dark_background: "#001824"
 background: "#dbffff"
 ---
 

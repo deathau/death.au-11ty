@@ -2,7 +2,10 @@
 {% extends "base.njk" %}
 
 {% block content %}
-<article {% if background %}style="--dynamic-color:{{background}};"{% endif %}>
+<article style="
+  {% if background %}--dynamic-color:{{background}};{% endif %}
+  {% if dark_background %}--dynamic-color-dark:{{dark_background}};{% endif %}
+">
   {% if date %}
   <aside class="post-info">
     <a href="{{ url }}">

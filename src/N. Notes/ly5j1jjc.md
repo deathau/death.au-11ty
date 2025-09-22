@@ -8,6 +8,7 @@ emoji: 🃏
 external_url: https://death.id.au/objects/0e03068e-1666-8500-3ac5-99e073843473
 status_url: https://deathau.status.lol/66850029ef3fe
 tags: [Marvel Snap]
+dark_background: "#000024"
 background: "#dbe7ff"
 ---
 
