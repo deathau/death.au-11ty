@@ -104,7 +104,8 @@ async function handleLol(body, env) {
     background: status.background || fullstatus?.background || null,
     external_url: status.external_url,
     status_url: `https://${status.address}.status.lol/${status.id}`,
-    tags:[]
+    tags:[],
+    author: username
   }
   if(frontmatter.background)
     frontmatter.dark_background = frontmatter.background ? darkColor(frontmatter.background) : null

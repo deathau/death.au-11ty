@@ -11,6 +11,7 @@ permalink: /styles.css/
 @import url('https://static.omg.lol/type/font-md-io.css');
 @import url('https://static.omg.lol/type/fontawesome-free/css/all.css');
 @import url('https://static.omg.lol/profiles/icons/omg.lol-icons.css');
+@import url('https://cdn.cache.lol/type/font-honey.css');
 
 :root {
   --foreground: #e2dae9;
@@ -694,4 +695,37 @@ footer .prami-logo {
 footer:hover .prami-logo {
   transform: scale(1.5) rotate(20deg);
   transition: all 0.3s ease;
+}
+
+aside.author-info {
+  padding: 0.5rem;
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  position: absolute;
+  left: 2rem;
+  top: -1.5rem;
+}
+
+.author-info a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside.author-info.neighbourhood {
+  background: #ede56a;
+  .p-name{ 
+    color: transparent;
+    font-size: 0;
+    
+    &::after {
+      content: 'Neighbourhood.omg.lol';
+      font-size: 1rem;
+      color: #242129;
+      font-family: 'VC Honey Deck', sans-serif;
+      font-weight: 400;
+    }
+  }
 }

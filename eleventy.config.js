@@ -7,6 +7,9 @@ import cacheBuster from "@mightyplow/eleventy-plugin-cache-buster";
 
 export default async function(eleventyConfig) {
 
+  // Pass-through files
+  eleventyConfig.addPassthroughCopy({"src/_static":"."});
+
   eleventyConfig.addFilter("excerpt", content =>
     new ExcerptGenerator().getExcerpt(content, 500)
   )
@@ -81,10 +84,15 @@ export default async function(eleventyConfig) {
     return value + '' + other
   });
 
-  // Pass-through files
-  eleventyConfig.addPassthroughCopy({"src/_static":"."});
-  const cacheBusterOptions = {};
-  eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
+  eleventyConfig.addFilter("merge", function(value, other) { 
+    return { ...value, ...other }
+  });
+
+  eleventyConfig.addNunjucksShortcode("getVar", function(varString) {
+    console.log(this.ctx)
+    return this.ctx[varString];
+  });
+
 
   // global data
   const metadata = {
@@ -92,10 +100,10 @@ export default async function(eleventyConfig) {
     title: "Death.au's Domain",
     subtitle: "Thoughts, stories and ideas.",
     base: "https://death.id.au/",
-    author: {
-      name: "Death.au",
-      // email: "", // Optional
-    }
+    // author: {
+    //   name: "Death.au",
+    //   // email: "", // Optional
+    // }
   }
 
   eleventyConfig.addGlobalData("language", metadata.language)
@@ -126,6 +134,9 @@ export default async function(eleventyConfig) {
     .use(markdownItBracketedSpans)
     .use(markdownItAttrs)
   eleventyConfig.setLibrary('md', markdownLib)
+
+  // const cacheBusterOptions = {};
+  // eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 }
 
 export const config = {

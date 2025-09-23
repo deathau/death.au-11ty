@@ -1,0 +1,70 @@
+{%- macro postMacro(post, preview=false) -%}
+  <article style="
+    {% if post.background %}--dynamic-color:{{post.background}};{% endif %}
+    {% if post.dark_background %}--dynamic-color-dark:{{post.dark_background}};{% endif %}
+  ">
+    {% if post.author %}
+      {% set author=post.author %}
+      {% include "_partials/author.njk" %}
+    {% endif %}
+    {% if post.date %}
+      <aside class="post-info">
+        <a href="{{ post.url }}">
+          <i class="fa-solid fa-clock"></i>
+          <time class="dt-published" datetime="{{ post.date | dateISOString }}">
+            {{ post.date | formatDate }}</time>
+        </a>
+      </aside>
+    {% endif %}
+    
+    {% if post.emoji %}
+      <i data-emoji="{{post.emoji}}">{{post.emoji}}</i>
+      <p>
+        {{ post.content | safe }}
+      </p>
+    {% else %}
+      {% if preview %}
+      <h2><a href="{{ post.url }}">{{ post.title }} </a></h2>
+      {% else %}
+      {% endif %}
+      {% if post.image %}
+        <a href="{{ post.url }}" class="feature_image">
+          <img src="{{ post.image }}" alt="{% if post.image_alt %}{{ post.image_alt }}{% else %}{{ post.title }}{% endif %}"/>
+        </a>
+      {% endif %}
+    
+      {% if preview %}
+        <p class="post-excerpt">
+          {% if post.summary %}
+            {{ post.summary }}
+          {% else %}
+           {{ post.templateContent | excerpt }}
+          {% endif %}
+        </p>
+      {% else %}
+        <p>
+          {{ post.content | safe }}
+        </p>
+      {% endif %}  
+    {% endif %}
+
+    {% if post.status_url or post.external_url %}
+      <aside class="post-info">
+        {% if post.status_url %}
+          <a class="status_url" href="{{post.status_url}}" target="_blank"><i class="omg-icon omg-prami"></i> via status.lol</a>
+        {% endif %}
+        {% if post.external_url %}
+          <a class="external_url" href="{{post.external_url}}" target="_blank"><i class="omg-icon omg-fediverse"></i> Interact on the Fediverse</a>
+        {% endif %}
+      </aside>
+    {% endif %}
+    {% if post.tags %}
+      <aside class="post-tags">
+        {% for tag in post.tags %}
+          <a class="tag" href="/tag/{{ tag | slug }}/">{{ tag }}</a>
+        {% endfor %}
+      </aside>
+    {% endif %}
+  </article>
+
+{%- endmacro -%}
