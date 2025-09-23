@@ -14,9 +14,11 @@ permalink: /styles.css/
 @import url('https://cdn.cache.lol/type/font-honey.css');
 
 :root {
-  --foreground: #e2dae9;
-  --background: #19171c;
-  --card-bg: #242129;
+  --foreground-light: #261e2d;
+  --foreground-dark: #e2dae9;
+  --foreground: light-dark(var(--foreground-light), var(--foreground-dark));
+  --background: light-dark(#e7e5ea, #19171c);
+  --card-bg:    light-dark(#dddae2, #242129);
   --accent: #845e9e;
   --color-em: #bb81f7;
 
@@ -38,7 +40,7 @@ permalink: /styles.css/
 }
 
 @media (prefers-color-scheme: light) {
-  html {
+  /* html {
     filter: invert(1) hue-rotate(180deg);
   }
 
@@ -46,7 +48,7 @@ permalink: /styles.css/
   svg,
   video {
     filter: invert(1) hue-rotate(180deg);
-  }
+  } */
 }
 
 * {
@@ -247,6 +249,7 @@ header>.avatar {
 .header {
   margin: 0 0 2em 0;
   background-color: #000;
+  color: var(--foreground-dark);
   border-radius: 0 0 1rem 1rem;
   box-shadow: var(--shadow);
 }
