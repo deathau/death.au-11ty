@@ -1,0 +1,18 @@
+---
+pagination:
+  data: collections.authors
+  size: 1
+  alias: author
+  addAllPagesToCollections: true
+permalink: /author/{{ author | slug }}/
+layout: base.njk
+---
+
+<main class="card">
+  <h1>Posts by “{{ author }}”</h1>
+</main>
+
+{% set authorlist = collections.authors[ author ] %}
+{% for post in authorlist | reverse %}
+  {% include "_partials/post-item.njk" %}
+{% endfor %}

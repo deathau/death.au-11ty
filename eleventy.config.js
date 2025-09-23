@@ -34,7 +34,7 @@ export default async function(eleventyConfig) {
   )
 
   eleventyConfig.addCollection("articles", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/B*/*")
+    return collectionApi.getFilteredByGlob("src/B*.*/*")
     .sort((a,b) => b.data.permalink.localeCompare(a.data.permalink))
   })
 
@@ -42,6 +42,20 @@ export default async function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/N. Notes/*")
     .sort((a,b) => b.data.permalink.localeCompare(a.data.permalink))
   })
+
+  eleventyConfig.addCollection("authors", function (collectionsApi) {
+		const hasAuthor = collectionsApi.getAllSorted().filter(function (item) {
+			// Side-step tags and do your own filtering
+			return "author" in item.data;
+		});
+
+    const authors = {}
+    hasAuthor.forEach(item => {
+      if(!authors[item.data.author]) authors[item.data.author] = []
+      authors[item.data.author].push(item)
+    })
+    return authors
+	});
 
   // Filters
   eleventyConfig.addFilter("formatDate", function(value) { 
