@@ -149,8 +149,8 @@ export default async function(eleventyConfig) {
     .use(markdownItAttrs)
   eleventyConfig.setLibrary('md', markdownLib)
 
-  const cacheBusterOptions = {};
-  eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
+  // const cacheBusterOptions = {};
+  // eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 }
 
 export const config = {
