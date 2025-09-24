@@ -114,17 +114,16 @@ export default async function(eleventyConfig) {
     title: "Death.au's Domain",
     subtitle: "Thoughts, stories and ideas.",
     base: "https://death.id.au/",
-    // author: {
-    //   name: "Death.au",
-    //   // email: "", // Optional
-    // }
+    author: {
+      name: "Death.au",
+      email: "", // Optional
+    }
   }
 
   eleventyConfig.addGlobalData("language", metadata.language)
   eleventyConfig.addGlobalData("title", metadata.title)
   eleventyConfig.addGlobalData("subtitle", metadata.subtitle)
   eleventyConfig.addGlobalData("base", metadata.base)
-  eleventyConfig.addGlobalData("author", metadata.author)
 
   eleventyConfig.addGlobalData("layout", metadata.layout)
 
@@ -136,7 +135,7 @@ export default async function(eleventyConfig) {
     limit: 20,     // 0 means no limit
   }
   eleventyConfig.addPlugin(feedPlugin, { collection, metadata, type: "atom", outputPath: "/atom.xml" })
-  eleventyConfig.addPlugin(feedPlugin, { collection, metadata, type: "rss", outputPath: "/rss.xml" })
+  // eleventyConfig.addPlugin(feedPlugin, { collection, metadata, type: "rss", outputPath: "/rss.xml" })
   eleventyConfig.addPlugin(feedPlugin, { collection, metadata, type: "json", outputPath: "/feed.json" })
 
   const markdownItOptions = {
