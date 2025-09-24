@@ -1,0 +1,34 @@
+---js
+{
+  pagination: {
+    data: "collections",
+    size: 1,
+    alias: "tag",
+    addAllPagesToCollections: true,
+    filter: [
+      "all",
+      "everything",
+      "everything-reversed",
+      "authors"
+    ]
+  },
+  permalink: "/tag/{{ tag | slug }}/rss.xml",
+  layout: null,
+  buildDate: new Date().getTime() + new Date().getTimezoneOffset() * 60000
+}
+---
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ metadata.title | safe }} tagged “{{ tag }}”</title>
+    <link>{{ metadata.base | addPathPrefixToFullUrl }}</link>
+    <atom:link rel="self" href="{{ metadata.base | addPathPrefixToFullUrl }}{{ permalink }}" type="application/rss+xml" />
+    <description>{{ metadata.description }}</description>
+    <language>{{ metadata.language or page.lang }}</language>
+    <lastBuildDate>{{ buildDate | dateToRfc822 }}</lastBuildDate>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    {%- for post in collections.everything.slice(0,20) %}
+    {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+      {% include "_partials/_feed/rss.item.njk" %}
+    {%- endfor %}
+  </channel>
+</rss>

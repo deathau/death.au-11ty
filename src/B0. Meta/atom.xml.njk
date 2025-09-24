@@ -1,0 +1,25 @@
+---js
+{
+  "permalink": "atom.xml",
+  "eleventyExcludeFromCollections": true,
+  "layout": null,
+  "buildDate": new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000)
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>{{ metadata.title | safe}}</title>
+  <subtitle>{{ metadata.description }}</subtitle>
+  <link rel="self" href="{{ metadata.base | addPathPrefixToFullUrl }}{{ permalink }}" type="application/atom+xml" />
+  <updated>{{ buildDate | dateToRfc3339 }}</updated>
+  <author>
+    <name>{{metadata.author.name}}</name>
+  </author>
+  <id>{{ metadata.base | addPathPrefixToFullUrl }}</id>
+
+  {%- for post in collections.everything.slice(0,20) %}
+  {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+    {% include "_partials/_feed/atom.entry.njk" %}
+  {%- endfor %}
+</feed>

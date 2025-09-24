@@ -1,0 +1,8 @@
+  <item>
+    <title>{{ post.data.title }}</title>
+    <link>{{ absolutePostUrl }}</link>
+    <description>{% if post.data.emoji %}{{post.data.emoji}} {% endif %}{% if post.data.summary %}{{ post.data.summary }}{% else %}{{ post.templateContent | excerpt }}{% endif %}</description>
+    <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+    <guid isPermaLink="true">{{ absolutePostUrl }}</guid>
+    {% if post.data.external_url %}<comments>{{ post.data.external_url }}</comments>{% endif %}
+  </item>

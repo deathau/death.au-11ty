@@ -126,6 +126,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addGlobalData("base", metadata.base)
 
   eleventyConfig.addGlobalData("layout", metadata.layout)
+  eleventyConfig.addGlobalData("metadata", metadata)
 
   // Plugins
 
@@ -134,8 +135,7 @@ export default async function(eleventyConfig) {
     name: "everything-reversed", // iterate over `collections.everything`
     limit: 20,     // 0 means no limit
   }
-  // eleventyConfig.addPlugin(feedPlugin, { collection, metadata, type: "atom", outputPath: "/atom.xml" })
-  // eleventyConfig.addPlugin(feedPlugin, { collection, metadata, type: "rss", outputPath: "/rss.xml" })
+
   eleventyConfig.addPlugin(feedPlugin, { collection, metadata, type: "json", outputPath: "/feed.json" })
 
   const markdownItOptions = {

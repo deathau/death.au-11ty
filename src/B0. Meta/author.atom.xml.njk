@@ -1,0 +1,31 @@
+---js
+{
+  pagination: {
+    data: "collections.authors",
+    size: 1,
+    alias: "author",
+    addAllPagesToCollections: true
+  },
+  permalink: "/author/{{ author | slug }}/atom.xml",
+  layout: null,
+  buildDate: new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000)
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>{{ metadata.title | safe}} posts by “{{ author }}”</title>
+  <subtitle>{{ metadata.description }}</subtitle>
+  <link rel="self" href="{{ metadata.base | addPathPrefixToFullUrl }}{{ permalink }}" type="application/atom+xml" />
+  <updated>{{ buildDate | dateToRfc3339 }}</updated>
+  <author>
+    <name>{{metadata.author.name}}</name>
+  </author>
+  <id>{{ metadata.base | addPathPrefixToFullUrl }}author/{{ author | slug }}/</id>
+
+  {% set authorlist = collections.authors[ author ] %}
+  {% for post in authorlist | reverse %}
+    {% include "_partials/_feed/atom.entry.njk" %}
+  {% endfor %}
+
+</feed>

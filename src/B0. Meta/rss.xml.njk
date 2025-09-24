@@ -3,21 +3,12 @@
   "permalink": "rss.xml",
   "eleventyExcludeFromCollections": true,
   "layout": null,
-  "metadata": {
-    "language": "en-AU",
-    "title": "Death.au's Domain",
-    "description": "Thoughts, stories and ideas.",
-    "base": "https://death.id.au/",
-    "author": {
-      "name": "Death.au"
-    }
-  },
   "buildDate": new Date().getTime() + new Date().getTimezoneOffset() * 60000
 }
 ---
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ metadata.title }}</title>
+    <title>{{ metadata.title | safe }}</title>
     <link>{{ metadata.base | addPathPrefixToFullUrl }}</link>
     <atom:link rel="self" href="{{ metadata.base | addPathPrefixToFullUrl }}{{ permalink }}" type="application/rss+xml" />
     <description>{{ metadata.description }}</description>
@@ -26,14 +17,7 @@
     <docs>https://www.rssboard.org/rss-specification</docs>
     {%- for post in collections.everything.slice(0,20) %}
     {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
-    <item>
-      <title>{{ post.data.title }}</title>
-      <link>{{ absolutePostUrl }}</link>
-      <description>{% if post.data.emoji %}{{post.data.emoji}} {% endif %}{% if post.data.summary %}{{ post.data.summary }}{% else %}{{ post.templateContent | excerpt }}{% endif %}</description>
-      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
-      <guid isPermaLink="true">{{ absolutePostUrl }}</guid>
-      {% if post.data.external_url %}<comments>{{ post.data.external_url }}</comments>{% endif %}
-    </item>
+      {% include "_partials/_feed/rss.item.njk" %}
     {%- endfor %}
   </channel>
 </rss>
