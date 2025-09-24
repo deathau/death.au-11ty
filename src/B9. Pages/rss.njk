@@ -19,12 +19,12 @@
   <channel>
     <title>{{ metadata.title }}</title>
     <link>{{ metadata.base | addPathPrefixToFullUrl }}</link>
-    <atom:link rel="self" href="{{ metadata.base | addPathPrefixToFullUrl }}{{ permalink }}" />
+    <atom:link rel="self" href="{{ metadata.base | addPathPrefixToFullUrl }}{{ permalink }}" type="application/rss+xml" />
     <description>{{ metadata.description }}</description>
     <language>{{ metadata.language or page.lang }}</language>
     <lastBuildDate>{{ buildDate | dateToRfc822 }}</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
-    {%- for post in collections.everything %}
+    {%- for post in collections.everything.slice(0,20) %}
     {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
     <item>
       <title>{{ post.data.title }}</title>

@@ -4,6 +4,7 @@ permalink: /now/
 layout: now
 title: Death.au's Now Page
 date: 2025-08-14
+summary: What am I up to these days?
 ---
 
 # What am I up to these days?
