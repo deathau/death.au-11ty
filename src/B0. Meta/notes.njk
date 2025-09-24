@@ -1,0 +1,10 @@
+---
+permalink: "/tag/notes{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
+layout: list
+title: Death.au's Notes
+pagination:
+  data: collections.notes
+  size: 20
+  alias: posts
+  addAllPagesToCollections: true
+---

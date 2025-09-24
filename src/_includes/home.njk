@@ -5,7 +5,7 @@ layout: base.njk
     {{ content | safe }}
   </main>
 
-  {% for post in collections.everything.slice(0,15) %}
+  {% for post in collections.everything.slice(0,20) %}
     {% include '_partials/post-item.njk' %}
   {% endfor %}
   <div class="extra-pagination">

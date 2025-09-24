@@ -1,0 +1,10 @@
+---
+permalink: "/tag/articles{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
+layout: list
+title: Death.au's Articles
+pagination:
+  data: collections.articles
+  size: 20
+  alias: posts
+  addAllPagesToCollections: true
+---
