@@ -71,7 +71,7 @@ main.page,
 main.home,
 main.cv,
 main>nav,
-nav.pagination,
+.extra-pagination,
 .card {
   max-width: 42em;
   border-radius: 1em;
@@ -86,6 +86,13 @@ nav.pagination,
   box-shadow: var(--shadow);
 }
 
+nav.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 article{
   background-color:
     light-dark(
@@ -716,7 +723,9 @@ aside.author-info {
   align-items: center;
   justify-content: center;
 }
-
+aside.author-info.deathau {
+  display: none;
+}
 aside.author-info.neighbourhood {
   background: #ede56a;
   .p-name{ 

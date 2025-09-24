@@ -1,7 +1,7 @@
 ---
 type: page
 permalink: "/cv/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
-layout: base.njk
+layout: cv.njk
 title: Gordon Pedersen's CV
 pagination:
   data: collections.cv
@@ -152,34 +152,4 @@ pagination:
       "Plugin of the Year" award for my <a href="https://death.id.au/cv-05/" rel="noreferrer">Sliding Panes</a> plugin, for Obsidian
     </li>
   </ul>
-
-  <h2>Projects</h2>
-  <p>
-    The below is a selection of projects I have worked on over the years, in order to
-    better demonstrate my experience.<br/>
-    They are presented in no particular order, and by no means represent everything I
-    have worked on.
-  </p>
 </article>
-
-<a id="projects"></a>
-{% include '_partials/pagination-projects.njk' %}
-
-{% for project in posts %}
-  <article>
-    <aside class="post-info">
-      <a href="{{ project.url }}">
-        <i class="fa-solid fa-clock"></i>
-        <time class="dt-published" datetime="{{ project.data.date | dateISOString }}">
-          {{ project.data.date | formatDate }}</time>
-      </a>
-    </aside> 
-    <a href="{{ project.url }}" class="feature_image">
-      <img src="{{ project.data.image }}" alt="{% if project.data.image_alt %}{{ project.data.image_alt }}{% else %}{{ project.data.title }}{% endif %}"/>
-    </a>
-    <h2><a href="{{ project.url }}">{{ project.data.title }} </a></h2>
-    <p class="post-excerpt">{{ project.data.summary }}</p>
-  </article>
-{% endfor %}
-
-{% include '_partials/pagination-projects.njk' %}

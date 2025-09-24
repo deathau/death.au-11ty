@@ -11,7 +11,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title>{{ title | safe}}</title>
-  <subtitle>{{ metadata.description }}</subtitle>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
   <link rel="self" href="{{ metadata.base | addPathPrefixToFullUrl }}{{ permalink }}" type="application/atom+xml" />
   <updated>{{ buildDate | dateToRfc3339 }}</updated>
   <author>

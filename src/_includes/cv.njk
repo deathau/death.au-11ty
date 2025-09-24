@@ -1,0 +1,40 @@
+---
+layout: base.njk
+---
+
+    {{ content | safe }}
+
+    <a id="projects"></a>
+<div class="card">
+  <h2>Projects</h2>
+  <p>
+    The below is a selection of projects I have worked on over the years, in order to
+    better demonstrate my experience.<br/>
+    They are presented in no particular order, and by no means represent everything I
+    have worked on.
+  </p>
+<nav class="pagination">{% include '_partials/pagination-projects.njk' %}</nav>
+</div>
+
+{% for project in posts %}
+  <article>
+    <aside class="post-info">
+      <a href="{{ project.url }}">
+        <i class="fa-solid fa-clock"></i>
+        <time class="dt-published" datetime="{{ project.data.date | dateISOString }}">
+          {{ project.data.date | formatDate }}</time>
+      </a>
+    </aside> 
+    <a href="{{ project.url }}" class="feature_image">
+      <img src="{{ project.data.image }}" alt="{% if project.data.image_alt %}{{ project.data.image_alt }}{% else %}{{ project.data.title }}{% endif %}"/>
+    </a>
+    <h2><a href="{{ project.url }}">{{ project.data.title }} </a></h2>
+    <p class="post-excerpt">{{ project.data.summary }}</p>
+  </article>
+{% endfor %}
+
+  <div class="extra-pagination">
+    <nav class="pagination">
+    {% include '_partials/pagination-projects.njk' %}
+    </nav>
+  </div>

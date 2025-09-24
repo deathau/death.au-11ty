@@ -33,9 +33,11 @@ export default async function(eleventyConfig) {
     ).sort((a,b) => a.data.permalink.localeCompare(b.data.permalink))
   )
 
-  eleventyConfig.addCollection("articles", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/B*.*/*")
+  eleventyConfig.addCollection("longform", function(collectionApi) {
+    const res = collectionApi.getFilteredByGlob("src/B*.*/*")
     .sort((a,b) => b.data.permalink.localeCompare(a.data.permalink))
+    console.log(res)
+    return res
   })
 
   eleventyConfig.addCollection("notes", function(collectionApi) {
@@ -113,7 +115,7 @@ export default async function(eleventyConfig) {
     language: "en-AU",
     title: "Death.au's Domain",
     subtitle: "Thoughts, stories and ideas.",
-    base: "https://death.id.au/",
+    base: "https://death.id.au",
     author: {
       name: "Death.au",
       email: "", // Optional
