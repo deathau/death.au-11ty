@@ -3,7 +3,7 @@
     <id>{{ absolutePostUrl }}</id>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <published>{{ post.date | dateToRfc3339 }}</published>
-    <content type="html"><div>{% if post.data.emoji %}{{post.data.emoji}} {% endif %}{{ post.content | safe }}</div></content>
+    <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">{% if post.data.emoji %}{{post.data.emoji}} {% endif %}{{ post.content | safe }}</div></content>
     <link rel="alternate" href="{{ absolutePostUrl }}" />
     <summary type="html">{% if post.data.emoji %}{{post.data.emoji}} {% endif %}{% if post.data.summary %}{{ post.data.summary }}{% else %}{{ post.templateContent | excerpt }}{% endif %}</summary>
   </entry>
