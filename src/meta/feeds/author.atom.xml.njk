@@ -1,0 +1,17 @@
+---
+layout: feeds/atom.njk
+pagination: 
+  data: collections.authors
+  size: 1
+  alias: author
+  addAllPagesToCollections: true
+permalink: /author/{{ author | slug }}/atom.xml
+eleventyComputed: 
+  title: "{{ metadata.title | safe }} posts by {{ author }}"
+  link: "{{ metadata.base }}/author/{{ author | slug }}/atom.xml"
+---
+<id>{{ metadata.base | addPathPrefixToFullUrl }}author/{{ author | slug }}/</id>
+{% set authorlist = collections.authors[ author ] %}
+{% for post in authorlist | reverse %}
+  {% include "feeds/atom.entry.njk" %}
+{% endfor %}

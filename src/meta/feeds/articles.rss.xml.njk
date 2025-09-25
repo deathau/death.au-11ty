@@ -1,0 +1,11 @@
+---
+permalink: /tag/articles/rss.xml
+layout: feeds/rss.njk
+title: "Death.au's Articles"
+eleventyComputed: 
+  link: "{{ metadata.base }}/tag/articles/rss.xml"
+---
+{%- for post in collections.longform.slice(0,20) %}
+{%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+  {% include "feeds/rss.item.njk" %}
+{%- endfor %}

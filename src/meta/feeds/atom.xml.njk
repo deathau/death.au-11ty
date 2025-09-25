@@ -1,0 +1,11 @@
+---
+permalink: /atom.xml
+layout: feeds/atom.njk
+eleventyComputed: 
+  link: "{{ metadata.base }}/atom.xml"
+---
+<id>{{ metadata.base | addPathPrefixToFullUrl }}</id>
+{%- for post in collections.everything.slice(0,20) %}
+{%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+  {% include "feeds/atom.entry.njk" %}
+{%- endfor %}

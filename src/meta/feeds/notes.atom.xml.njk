@@ -1,0 +1,12 @@
+---
+permalink: /tag/notes/atom.xml
+layout: feeds/atom.njk
+title: Death.au's Notes
+eleventyComputed: 
+  link: "{{ metadata.base }}/tag/notes/atom.xml"
+---
+<id>{{ metadata.base | addPathPrefixToFullUrl }}tag/notes/</id>
+{%- for post in collections.notes.slice(0,20) %}
+{%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+  {% include "feeds/atom.entry.njk" %}
+{%- endfor %}

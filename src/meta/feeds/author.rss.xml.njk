@@ -1,0 +1,16 @@
+---
+layout: feeds/rss.njk
+pagination:
+  data: collections.authors
+  size: 1
+  alias: author
+  addAllPagesToCollections: true
+permalink: /author/{{ author | slug }}/rss.xml
+eleventyComputed: 
+  title: "{{ metadata.title | safe }} posts by {{ author }}"
+  link: "{{ metadata.base }}/author/{{ author | slug }}/rss.xml"
+---
+{% set authorlist = collections.authors[ author ] %}
+{% for post in authorlist | reverse %}
+  {% include "feeds/rss.item.njk" %}
+{% endfor %}

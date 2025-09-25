@@ -34,10 +34,8 @@ export default async function(eleventyConfig) {
   )
 
   eleventyConfig.addCollection("longform", function(collectionApi) {
-    const res = collectionApi.getFilteredByGlob("src/B*.*/*")
+    return collectionApi.getFilteredByGlob("src/B*.*/*")
     .sort((a,b) => b.data.permalink.localeCompare(a.data.permalink))
-    console.log(res)
-    return res
   })
 
   eleventyConfig.addCollection("notes", function(collectionApi) {

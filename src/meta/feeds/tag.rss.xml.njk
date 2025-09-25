@@ -1,0 +1,24 @@
+---
+layout: feeds/rss.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true
+  filter:
+    - all
+    - everything
+    - everything-reversed
+    - authors
+    - articles
+    - notes
+permalink: tag/{{ tag | slug }}/rss.xml
+eleventyComputed:
+  title: "{{ metadata.title | safe }} posts tagged {{ tag }}"
+  link: "{{ metadata.base }}/tag/{{ tag | slug }}/rss.xml"
+---
+{% set taglist = collections[ tag ] %}
+{%- for post in taglist | reverse  %}
+{%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+  {% include "feeds/rss.item.njk" %}
+{%- endfor %}
