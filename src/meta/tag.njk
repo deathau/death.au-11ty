@@ -17,6 +17,14 @@ layout: base.njk
 
 <main class="card">
   <h1>Posts tagged “{{ tag }}”</h1>
+  <div class="feed-links">
+    <a href="/tag/{{ tag | slug }}/rss.xml" title="RSS Feed for {{ tag }}">
+      <img alt="RSS Feed for {{ tag }}" src="https://img.shields.io/badge/RSS-{{ tag }}-845e9e?logo=rss">
+    </a>
+    <a href="/tag/{{ tag | slug }}/atom.xml" title="Atom Feed for {{ tag }}">
+      <img alt="Atom Feed for {{ tag }}" src="https://img.shields.io/badge/Atom-{{ tag }}-845e9e?logo=rss&logoColor=9dc0e5">
+    </a>
+  </div>
 </main>
 
 {% set taglist = collections[ tag ] %}

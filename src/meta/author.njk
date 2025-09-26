@@ -10,6 +10,14 @@ layout: base.njk
 
 <main class="card">
   <h1>Posts by “{{ author }}”</h1>
+  <div class="feed-links">
+    <a href="/author/{{ author }}/rss.xml" title="RSS Feed for {{ author }}">
+      <img alt="RSS Feed for {{ author }}" src="https://img.shields.io/badge/RSS-{{ author }}-845e9e?logo=rss">
+    </a>
+    <a href="/author/{{ author }}/atom.xml" title="Atom Feed for {{ author }}">
+      <img alt="Atom Feed for {{ author }}" src="https://img.shields.io/badge/Atom-{{ author }}-845e9e?logo=rss&logoColor=9dc0e5">
+    </a>
+  </div>
 </main>
 
 {% set authorlist = collections.authors[ author ] %}

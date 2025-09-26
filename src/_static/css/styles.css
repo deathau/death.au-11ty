@@ -241,6 +241,22 @@ footer {
   padding: 0 1em;
 }
 
+.feed-links,
+footer nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  a:has(img) {
+    width: auto;
+    margin: 2px;
+  }
+}
+.feed-links {
+  justify-content: flex-end;
+}
+
 .avatar {
   max-width: 40px;
   max-height: 40px;
