@@ -112,7 +112,7 @@ export default async function(eleventyConfig) {
   const metadata = {
     language: "en-AU",
     title: "Death.au's Domain",
-    subtitle: "Thoughts, stories and ideas.",
+    description: "Thoughts, stories and ideas.",
     base: "https://death.id.au",
     author: {
       name: "Death.au",
