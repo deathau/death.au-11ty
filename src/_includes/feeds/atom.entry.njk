@@ -1,3 +1,4 @@
+  {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
   <entry>
     <title>{{ post.data.title }}</title>
     <id>{{ absolutePostUrl }}</id>

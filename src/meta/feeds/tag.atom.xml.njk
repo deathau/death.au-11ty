@@ -20,6 +20,5 @@ eleventyComputed:
 <id>{{ metadata.base | addPathPrefixToFullUrl }}tag/{{ tag | slug }}/</id>
 {% set taglist = collections[ tag ] %}
 {%- for post in taglist | reverse  %}
-{%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
   {% include "feeds/atom.entry.njk" %}
 {%- endfor %}
