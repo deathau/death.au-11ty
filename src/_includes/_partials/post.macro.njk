@@ -2,7 +2,7 @@
   <article style="
     {% if post.background %}--dynamic-color:{{post.background}};{% endif %}
     {% if post.dark_background %}--dynamic-color-dark:{{post.dark_background}};{% endif %}
-  ">
+  " {% if post.type %}class="{{post.type}}"{% endif %}>
     {% if post.author %}
       {% set author=post.author %}
       {% include "_partials/author.njk" %}
@@ -17,7 +17,7 @@
       </aside>
     {% endif %}
     
-    {% if post.emoji %}
+    {% if post.emoji or post.type=='note' %}
       <i data-emoji="{{post.emoji}}">{{post.emoji}}</i>
       <p>
         {{ post.content | safe }}

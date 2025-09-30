@@ -102,9 +102,13 @@ article{
 }
 
 
-article:has([data-emoji]) {
+article:has([data-emoji]), article.note {
   min-height: 10em;
   display:block;
+}
+
+article img+img {
+  max-width: 32.9%;
 }
 
 main.page {
