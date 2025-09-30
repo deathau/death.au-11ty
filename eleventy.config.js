@@ -142,7 +142,10 @@ export default async function(eleventyConfig) {
     html: true,
     breaks: false,
     linkify: true,
-    xhtmlOut: true
+    xhtmlOut: true,
+    highlight: (str, lang) => {
+      return `<pre><code class="language-${lang}" data-lang="${lang}">${markdownLib.utils.escapeHtml(str)}</code></pre>`;
+    }
   }
   const markdownLib = markdownIt(markdownItOptions)
     .use(markdownItBracketedSpans)

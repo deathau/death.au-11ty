@@ -447,7 +447,7 @@ footer p {
   text-align: center;
 }
 
-.tag, .mention {
+.tag:not(.token), .mention {
   background: var(--accent);
   color: var(--background);
   padding: .3em .4em;
@@ -461,11 +461,11 @@ footer p {
   line-height: 1;
 }
 
-h2 .tag {
+h2 .tag:not(.token) {
   font-size: 1.5rem;
 }
 
-.tag:hover {
+.tag:not(.token):hover {
   color: white;
 }
 
@@ -523,15 +523,37 @@ pre code {
   white-space: pre-wrap;
   word-wrap: break-word;
   position: relative;
+  overflow-y: visible;
+  min-width: 100%;
 }
 
 code[data-lang]::before {
   content: attr(data-lang);
   position: absolute;
-  top: -1.5rem;
+  top: -1rem;
   left: 0;
+
+
+  background: var(--accent);
+  color: var(--background);
+  padding: .3em .4em;
+  margin: 0 .2em 0 .2em;
+  border-radius: .5em;
+  text-decoration: none;
+  display: inline-block;
+  font-family: var(--font-code);
+  font-weight: var(--font-code-weight);
   font-size: 1rem;
-  color: var(--accent);
+  line-height: 1;
+}
+
+pre[class*="language-"] {
+  /* white-space: pre-wrap; */
+  /* word-break: break-word;  */
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
 }
 
 img {
