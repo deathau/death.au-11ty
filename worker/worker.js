@@ -41,6 +41,10 @@ export default {
       const body = await req.json()
       return handleLol(body, env)
     }
+    else if(req.method === "POST" && url.pathname.startsWith("/note")) {
+      const body = await req.json()
+      return handleNote(body, env)
+    }
     else if(req.method === "GET" && url.pathname.startsWith("/apget")) {
       const href = url.searchParams.get('url')
       if(!href) return new Response('"url" parameter required', { status: 400, headers: { "Content-Type": "text/plain" }})
@@ -59,6 +63,109 @@ export default {
 		);
   },
 };
+
+async function handleNote(body, env) {
+  // get the url from the incoming data
+  const url = new URL(body.url.replace(/\/display\//,'/objects/'));
+
+  // get the full data of the friendica post
+  const statusres = await fetch(url.toString(), {
+    headers: {
+      'Accept': 'application/json'
+    }  
+  })
+  const status = await statusres.json()
+  const time = new Date(status.published).getTime()
+
+  let frontmatter = {
+    location: `/${time.toString(36)}`,
+    permalink: `/n.${time.toString(36)}/`,
+    date: moment(time).tz('Australia/Melbourne').format(),
+    type: 'note',
+    external_url: status.id,
+    tags:[]
+  }
+
+  let content = status.source.content
+
+  // friendica source content is bbcode, so we need to convert to markdown,
+  // but first, I want to handle hashtags and mentions
+  content.match(/#\[url=.*\](\w+)\[\/url\]/g)?.filter((v,i,a) => a.indexOf(v) === i)?.forEach(bbtag => {
+    console.log(bbtag)
+    const tag = bbtag.match(/#\[url=.*\](\w+)\[\/url\]/)[1]
+    console.log(tag)
+    const nonPascal = tag.replace(/([a-z])([A-Z])/g, "$1 $2")
+    const kebab = tag.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()
+    frontmatter.tags.push(nonPascal)
+    content = content.replaceAll(bbtag, `[#${tag}](/tag/${kebab}){.tag}`)
+  })
+  const mentions = content.match(/@\[\w+\]\(.*\)/g)?.filter((v,i,a) => a.indexOf(v) === i)
+  if(mentions) for(let mention of mentions) {
+    try{
+      const handle = mention.substring(2, mention.indexOf(']'))
+      const domain = handle.substring(handle.indexOf('@') + 1)
+      const webfinger = await (await fetch(`https://${domain}/.well-known/webfinger?resource=acct:${handle}`)).json()
+      if(webfinger) {
+        const link = webfinger.links?.find(l => l.rel == "http://webfinger.net/rel/profile-page")?.href
+                  || webfinger.links?.find(l => l.rel == "me" || l.rel == "self")?.href
+                  || webfinger.aliases && webfinger.aliases.length > 0 ? webfinger.aliases[0] : undefined
+        if(link) content = content.replaceAll(mention, `[${mention}](${link}){.mention target="_blank"}`)
+      }
+    }
+    catch(err) { console.error(err) }
+  }
+
+  // now convert bbcode to markdown
+  content = content
+    .replace(/\[b\](.*?)\[\/b\]/g, '**$1**')
+    .replace(/\[i\](.*?)\[\/i\]/g, '*$1*')
+    .replace(/\[u\](.*?)\[\/u\]/g, '<u>$1</u>')
+    .replace(/\[s\](.*?)\[\/s\]/g, '~~$1~~')
+    .replace(/\[url=(.*?)\](.*?)\[\/url\]/g, '[$2]($1)')
+    .replace(/\[img=(.*?)\](.*?)\[\/img\]/g, '![$2]($1)')
+    .replace(/\[quote\](.*?)\[\/quote\]/gs, '\n> $1\n')
+    .replace(/\[code\](.*?)\[\/code\]/gs, '\n```\n$1\n```\n')
+    .replace(/\[size=.*?\](.*?)\[\/size\]/g, '$1')
+    .replace(/\[color=.*?\](.*?)\[\/color\]/g, '$1')
+    .replace(/\[list\](.*?)\[\/list\]/gs, '\n$1\n')
+    .replace(/\[\*\](.*?)(\n|$)/g, '- $1\n')
+    .replace(/\n{3,}/g, '\n\n') // collapse multiple newlines
+    .trim()
+
+  const yamlOptions = {
+    collectionStyle: 'flow',
+    simpleKeys: true
+  }
+  let frontmatterString = YAML.stringify(frontmatter, null, yamlOptions)
+  // weblog has some quirks with its yaml interpretation
+  frontmatterString = frontmatterString
+    .replace(/{\n/, '').replace(/}\n/, '').replace(/^\s\s/gm, '').replace(/,$/gm, '')
+    .replace(/\ntags: \[\]$/m, '')
+
+  // this is the actual markdown
+  let markdown = `---\n${frontmatterString}---\n\n${content}\n`
+
+  if(env.GITHUB_TOKEN && env.GITHUB_REPO) {
+    // the url to push the file to the repo in `/weblog/status/{whatever the location is}.md`
+    let pushurl = `https://api.github.com/repos/${env.GITHUB_REPO}/contents/src/N. Notes${frontmatter.location}.md`
+    
+    // just return the result of this request
+    return await fetch(pushurl, {
+      method: "PUT",
+      body: JSON.stringify({
+        content: btoa(unescape(encodeURIComponent(markdown))), // the markdown content as base64
+        message: `Added status ${frontmatter.location}` // the commit message
+      }),
+      headers: {
+        'Authorization': `token ${env.GITHUB_TOKEN}`, // require the auth token
+        'Content-Type': 'application/vnd.github.v3+json', // the content type is required for this api
+        'User-Agent': 'status.death-au.workers.dev' // github requires a user agent
+      }
+    })
+  }
+
+  return new Response(markdown, { status: 400 })
+}
 
 async function handleLol(body, env) {
   /* incoming: {
@@ -91,12 +198,13 @@ async function handleLol(body, env) {
   }
 
   // create a "title" for the status
-  const title = status.emoji + ' ' + status.content.match(/((\s*\S+){10})([\s\S]*)/)[1].replaceAll('\n', ' ') + '...'
+  // not necessary anymore
+  //x const title = status.emoji + ' ' + status.content.match(/((\s*\S+){10})([\s\S]*)/)[1].replaceAll('\n', ' ') + '...'
 
   // this is the frontmatter data we're adding to the markdown file
   let frontmatter = {
     id: status.id,
-    title,
+    //x title,
     date: moment(status.created*1000).tz('Australia/Melbourne').format(),
     location: `/${(status.created * 1000).toString(36)}`,
     permalink: `/n.${(status.created * 1000).toString(36)}/`,
