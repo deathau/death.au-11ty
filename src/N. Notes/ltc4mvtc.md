@@ -4,7 +4,8 @@ permalink: /n.ltc4mvtc/
 date: 2024-03-04T10:11:54+11:00
 type: note
 external_url: https://death.id.au/objects/0e03068e-3365-e503-ba94-5b6880502838
-tags: [ obtf ]
+tags:
+  - OBTF
 ---
 
 Small update on my [#obtf](/tag/obtf){.tag} experiment:
