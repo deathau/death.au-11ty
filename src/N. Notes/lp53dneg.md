@@ -7,5 +7,5 @@ external_url: https://mortifer.online/objects/8b7c03d3-2565-59a9-e3ec-3b15309600
 ---
 
 This is pretty cool. Might be something to do with my kids on their holidays.
-Thanks for sharing, @shanselman@hachyderm.io
+Thanks for sharing, [@shanselman@hachyderm.io](https://hachyderm.io/@shanselman){.mention target="_blank"}
 [https://vt.tiktok.com/ZSNaQyFE4/](https://vt.tiktok.com/ZSNaQyFE4/)

@@ -8,7 +8,7 @@ tags:
   - OBTF
 ---
 
-Small update on my [#obtf](/tag/obtf){.tag} experiment:
-It didn't really go so well. I did use it a little bit, but it was less "bullet journal" and more "rambling mess".
-Turns out, when I write, I like to keep writing.
+Small update on my [#obtf](/tag/obtf){.tag} experiment:  
+It didn't really go so well. I did use it a little bit, but it was less "bullet journal" and more "rambling mess".  
+Turns out, when I write, I like to keep writing.  
 But, a new approach came to mind, this time without even reading something online. And I kind of feel like if that's what my brain wants to do, then I should probably give it a red hot go...
