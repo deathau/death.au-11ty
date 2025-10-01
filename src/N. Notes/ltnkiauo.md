@@ -10,4 +10,4 @@ Ooh, I found an older one! It says this:
 
 > It’s been a while since I’ve posted on a blog. So I decided to make a new one. The others all have too much crap I don’t really want to read again.
 
-🤦
+<i data-emoji="🤦">🤦</i>

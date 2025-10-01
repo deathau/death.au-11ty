@@ -18,7 +18,7 @@
     {% endif %}
     
     {% if post.emoji or post.type=='note' %}
-      <i data-emoji="{{post.emoji}}">{{post.emoji}}</i>
+      <i class="post-emoji" data-emoji="{{post.emoji}}">{{post.emoji}}</i>
       <p>
         {{ post.content | safe }}
       </p>
