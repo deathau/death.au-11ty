@@ -8,8 +8,8 @@ layout: base.njk
       <a href="{{ permalink }}">
       <i class="fa-solid fa-clock"></i>
       Last Updated
-      <time class="dt-published" datetime="{{ date | dateISOString }}">
-          {{ date | formatDate }}</time>
+      <time class="dt-published" datetime="{{ omg.now.updatedISO | dateISOString }}">
+          {{ omg.now.updatedISO | formatDate }}</time>
       </a>
     </aside> 
   </main>

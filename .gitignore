@@ -2,6 +2,8 @@ node_modules/
 old/
 _site/
 .obsidian/
+.cache/
+.omgcache/
 
 # wrangler project
 .dev.vars
