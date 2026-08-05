@@ -808,3 +808,232 @@ blockquote::before {
   color: var(--accent);
   font-family: var(--font-head);
 }
+
+/* ==========================================================================
+   CV / Resume — screen styles for the restructured page
+   ========================================================================== */
+
+/* The print-only header is hidden on screen (the decorative main.home covers it). */
+.cv-resume .print-header {
+  display: none;
+}
+
+.cv-resume .contact-row {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em 1.25em;
+  padding: 0;
+  margin: 0 0 1em;
+  font-family: var(--font-code);
+  font-size: 0.85em;
+  width: 100%;
+}
+.cv-resume .contact-row li {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.cv-resume .contact-row i {
+  color: var(--accent);
+}
+
+.cv-resume .summary-block p {
+  margin-top: 0;
+}
+
+/* Skills as a scannable definition grid instead of a comma wall. */
+.cv-resume .skills-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4em 1em;
+  width: 100%;
+  margin: 0;
+}
+.cv-resume .skill-group {
+  display: contents;
+}
+.cv-resume .skills-grid dt {
+  font-family: var(--font-code);
+  color: var(--color-em);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.cv-resume .skills-grid dd {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cv-resume .projects-list,
+.cv-resume .section-hint {
+  width: 100%;
+}
+.cv-resume .projects-list {
+  padding-left: 1.1em;
+}
+.cv-resume .projects-list li {
+  margin-bottom: 0.5em;
+}
+.cv-resume .proj-tech {
+  font-family: var(--font-code);
+  font-size: 0.8em;
+  color: var(--color-em);
+  white-space: nowrap;
+}
+.cv-resume .section-hint {
+  font-size: 0.85em;
+  opacity: 0.8;
+  margin-top: -0.3em;
+}
+
+@media (max-width: 520px) {
+  .cv-resume .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 0.15em 0;
+  }
+  .cv-resume .skills-grid dd {
+    margin-bottom: 0.6em;
+  }
+}
+
+/* ==========================================================================
+   PRINT — turn the CV page into a clean, ~2-page A4/Letter resume PDF
+   ========================================================================== */
+@media print {
+  /* Force light theme regardless of OS/browser dark mode. */
+  :root { color-scheme: light; }
+
+  @page {
+    margin: 14mm 16mm;
+  }
+
+  body {
+    background: #fff !important;
+    color: #1a1a1a !important;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+
+  /* Hide all site chrome and everything that isn't the resume. */
+  .header,
+  footer,
+  main.home,
+  #projects,
+  .card,
+  .extra-pagination,
+  nav.pagination,
+  article:not(#resume) {   /* the auto-appended portfolio project cards */
+    display: none !important;
+  }
+
+  /* The resume itself: strip the card styling, glow, texture, shadows. */
+  #resume.cv-resume {
+    display: block;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+  }
+  #resume.cv-resume::before,
+  #resume.cv-resume::after {
+    display: none !important;
+  }
+
+  /* Clean, ATS-safe headings — drop the blackletter display font for print. */
+  #resume h1,
+  #resume h2,
+  #resume h3,
+  #resume .print-title,
+  #resume .p-experience,
+  #resume .p-education,
+  #resume .skills-grid dt,
+  #resume .contact-row {
+    font-family: 'Rubik', Arial, Helvetica, sans-serif !important;
+  }
+
+  /* Print-only header block. */
+  #resume .print-header {
+    display: block;
+    margin-bottom: 0.2em;
+  }
+  #resume .print-header .p-name {
+    font-size: 22pt;
+    margin: 0;
+    color: #111;
+  }
+  #resume .print-title {
+    margin: 0.1em 0 0;
+    font-size: 11.5pt;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  #resume .contact-row {
+    font-size: 8.5pt;
+    gap: 0.2em 1em;
+    margin-bottom: 0.9em;
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid #ccc;
+  }
+  #resume .contact-row i { color: #555; }
+  #resume a { color: #1a1a1a; text-decoration: none; }
+
+  #resume h2 {
+    font-size: 12pt;
+    color: var(--accent);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 2px;
+    margin: 0.9em 0 0.35em;
+  }
+
+  #resume .summary-block p { margin: 0 0 0.4em; }
+
+  #resume .p-experience,
+  #resume .p-education {
+    font-size: 9.5pt;
+    margin: 0.5em 0 0.2em;
+    line-height: 1.35;
+  }
+  #resume .p-experience .p-name { font-weight: 600; }
+  #resume .p-location { color: var(--accent); }
+
+  #resume ul { margin: 0.15em 0 0.5em; padding-left: 1.1em; }
+  #resume li { margin-bottom: 0.12em; }
+
+  /* Skills stay as a compact two-column grid. */
+  #resume .skills-grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.2em 0.8em;
+  }
+  #resume .skills-grid dt { color: var(--accent); }
+  #resume .proj-tech { color: #666; }
+  #resume .section-hint { color: #666; }
+  #resume .p-skill::after { content: none; }
+
+  /* Was: force a page break before Skills, back when Experience was three
+     placeholder bullets and the CV was designed as two pages.
+
+     Disabled 2026-08-05. Experience now fills page 1 on its own, so forcing the
+     break left page 2 nearly half empty (39 / 25 / 33 lines). Letting it flow
+     gives 39 / 40 / 18 and leaves room on page 3 for the AreaSafe / Just Bricks /
+     Canvas Factory project entries still to be added.
+
+     The break-inside rules below already stop an entry splitting across pages,
+     which is the thing that actually mattered. Restore `page` on both lines to
+     go back. */
+  #resume .page-two {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* Avoid awkward breaks that split an entry across pages. */
+  #resume h2 { break-after: avoid; page-break-after: avoid; }
+  #resume .p-experience,
+  #resume .p-education,
+  #resume .projects-list li,
+  #resume .skill-group { break-inside: avoid; page-break-inside: avoid; }
+}

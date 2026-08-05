@@ -19,137 +19,318 @@ pagination:
     <h2>Curriculum Vitae</h2>
   </div>
   <div id="profile-items">
-    <p>I'm a software developer in Melbourne, Australia, with 15 years of experience managing projects from concept to deployment and maintenance.</p>
-    <p>I enjoy problem-solving, which drives my passion for UX/UI design and my expertise in front-end and back-end languages and frameworks.</p>
+    <p>I'm a software developer in Melbourne, Australia, with 15+ years of experience taking projects from concept to deployment and long-term maintenance.</p>
+    <p>I love problem-solving — it's what drives my work across UX/UI design, front-end, and back-end.</p>
   </div>
 </main>
 
-<article>
-  <p>I am an accomplished and results-oriented Senior Software Developer with 15+ years of experience leading and innovating in fast-paced technology environments. I have a proven ability to architect, develop, and deploy robust software solutions. I am seeking a challenging new role where I can leverage my extensive technical expertise to drive impactful projects and contribute to a company's long-term success.</p>
+<article id="resume" class="cv-resume h-card">
+
+  <!-- Print-only header: replaces the decorative web header above when printing -->
+  <header class="print-header">
+    <h1 class="p-name">Gordon Pedersen</h1>
+    <p class="print-title">Senior Software Engineer</p>
+  </header>
+
+  <!-- Contact row (shows on web and in print) -->
+  <ul class="contact-row">
+    <li><i class="fa-solid fa-location-dot"></i> <span><span class="p-locality">Melbourne</span>, <span class="p-country-name">Australia</span></span></li>
+    <li><i class="fa-solid fa-envelope"></i> <a class="u-email" href="mailto:gordon.ped@death.id.au">gordon.ped@death.id.au</a> </li>
+    <li><i class="fa-solid fa-globe"></i> <a class="u-url" href="https://death.id.au" rel="me">death.id.au</a></li>
+    <li><i class="fa-brands fa-github"></i> <a href="https://github.com/deathau" rel="me">github.com/deathau</a></li>
+    <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/gordon-pedersen/" rel="me">in/gordon-pedersen</a></li>
+  </ul>
+
+  <!-- Single, specific summary. Replaces the old generic boilerplate paragraph. -->
+  <section class="summary-block">
+    <p class="p-note">
+      Senior software engineer with 15+ years building and shipping production systems —
+      from co-founding a technology startup and leading its delivery for fifteen years,
+      to modernising legacy eCommerce platforms and building the internal tooling teams
+      run on. I'm at my best making sense of messy systems: untangling a platform nobody
+      wants to touch, finding the cause of an outage nobody can reproduce, and writing it
+      down so the next person doesn't start from zero. Creator of an award-winning
+      open-source Obsidian plugin with 1.3M downloads.
+    </p>
+  </section>
+
   <h2>Experience</h2>
+
   <p class="h-event p-experience">
-    <span class="p-location">Aerion Technologies</span> <br> 
-    <span class="p-name">Co-founder, Senior Software Architect, Head of Front-End</span> <br> 
-    <time class="dt-start" datetime="2008">2008</time> - <time class="dt-end" datetime="2023">2023</time>
+    <span class="p-location p-name-role">SWiM Communications</span> <br>
+    <span class="p-name">Full-Stack Developer</span> <br>
+    <time class="dt-start" datetime="2025">2025</time> &ndash; <time class="dt-end" datetime="2026">2026</time>
+  </p>
+  <ul>
+    <!-- Bullet order is tuned for a general reader. For tailored applications see
+         areas/team/job-search-2026.md § CV variants:
+           Track A (DX / internal tooling): move the knowledge-base bullet to second.
+           Track B (modernisation consultancy): cut the last two bullets.
+         Cut order for print, if this overruns: 6 (Greenbook), then 7 (KB), then 5
+         (outages). Bullet 2 must survive. -->
+    <li>
+      Developer across a portfolio of CS-Cart eCommerce platforms and a 45-site WordPress
+      estate — custom addon development, checkout and payment integration, database
+      migration, performance and incident work, and direct client scoping. Day-to-day in
+      <span class="p-skill">PHP 8</span>, <span class="p-skill">MySQL</span>/<span class="p-skill">MariaDB</span>,
+      <span class="p-skill">Smarty</span>, <span class="p-skill">JavaScript</span> and
+      <span class="p-skill">SCSS</span>, on DDEV/Docker and cPanel/WHM.
+    </li>
+    <li>
+      <strong>Migrated a national online retailer from CS-Cart 4.5 / PHP 7.1 to 4.20 / PHP 8.3</strong>
+      — fifteen sequential major versions and two PHP runtimes — on a live store carrying
+      201,000 orders, 89,000 customers and a 3.2&nbsp;GB database, closing a nine-year
+      platform-security gap without data loss.
+    </li>
+    <li>
+      Built that store's <strong>anti-fraud suite</strong>: PayPal Advanced Card Payments
+      (Card Fields) with 3-D Secure and Apple/Google Pay capture, plus order IP
+      geolocation flagging billing-country mismatches for staff review — built on the
+      platform's bundled MaxMind database, adding no runtime dependency, no per-query
+      cost and no data leaving the server.
+    </li>
+    <li>
+      <strong>Rebuilt and launched the B2B checkout</strong> for a safety-equipment
+      retailer running three storefronts from one backend — pay-now, quote-request and
+      trading-account order paths, a weight-and-freight shipping engine, Stripe, and
+      automatic surcharge logic. Used daily by trade customers and the client's internal
+      sales team.
+    </li>
+    <li>
+      <strong>Diagnosed and eliminated recurring production outages</strong> on a client
+      store, root-causing a PHP-FPM pool configured to permit 160&nbsp;GB of memory on a
+      64&nbsp;GB host. Peak database load fell from 12 CPU cores to 0.14, and downtime
+      stopped.
+    </li>
+    <li>
+      Took <strong>time tracking into the agency's in-house CodeIgniter CRM</strong> from
+      written pitch through spec, build, deploy and user documentation — replacing a
+      manual copy-paste workflow for every developer in the company.
+    </li>
+    <li>
+      <strong>Designed and built the agency's shared knowledge base</strong> as its
+      engineering handover system — a git-backed markdown repository structured so that
+      colleagues and their AI coding assistants read it directly, with secret scanning in
+      both a pre-commit hook and CI and a PR-only workflow. Distilled a 300-file personal
+      vault into 38 verified pages, plus shared CLI tooling for the team's routine server,
+      DNS and deployment tasks.
+    </li>
+  </ul>
+
+  <p class="h-event p-experience">
+    <span class="p-location">Independent Developer</span> <br>
+    <span class="p-name">Open-Source &amp; Game Development / Career Break</span> <br>
+    <time class="dt-start" datetime="2023">2023</time> &ndash; <time class="dt-end" datetime="2025">2025</time>
   </p>
   <ul>
     <li>
-      Co-founded and scaled a successful technology startup, 
-      driving all aspects of software development from conception to deployment.
+      Maintained and grew my award-winning Obsidian plugin,
+      <a href="https://death.id.au/cv.05/" rel="noreferrer">Sliding Panes (Andy Matuschak Mode)</a> —
+      a novel way to view open panes in Obsidian. 879 GitHub stars, 1.3M downloads.
     </li>
     <li>
-      Led the design, development, and maintenance of software applications 
-      across many industries and disciplines, from mobile apps for architectural 
-      inspections to SaaS platforms for retail digital and in-store marketing, 
+      Built and maintained a widely used browser extension,
+      <a href="https://github.com/deathau/markdownload" rel="noreferrer">MarkDownload</a> —
+      clips web pages as Markdown for saving into Obsidian or as plain text.
+      4k GitHub stars, 30k+ downloads.
+    </li>
+    <li>
+      Designed and shipped an original mobile game,
+      <a href="https://death.id.au/cv.04/" rel="noreferrer">Cube Tube</a>,
+      deepening my Ruby and game-development skills.
+    </li>
+    <li>
+      Was primary carer during a planned family leave while staying active in open source and current with industry tooling.
+    </li>
+  </ul>
+
+  <p class="h-event p-experience">
+    <span class="p-location">Aerion Technologies</span> <br>
+    <span class="p-name">Co-founder · Senior Software Architect · Head of Front-End</span> <br>
+    <time class="dt-start" datetime="2008">2008</time> &ndash; <time class="dt-end" datetime="2023">2023</time>
+  </p>
+  <ul>
+    <li>
+      Co-founded and scaled a technology startup over 15 years, owning software delivery
+      from concept to deployment and maintenance. Peaked at a team of 15+, all remote,
+      across dozens of projects and clients.
+    </li>
+    <li>
+      Architected and led delivery of software across many industries: mobile apps for
+      architectural inspections, SaaS platforms for retail digital and in-store marketing,
       and gamified educational tools for specialist learning centres.
     </li>
     <li>
-      Mentored and managed teams of 5-10 developers, fostering a collaborative and
-      high-performing environment.
+      Built and led teams of 5–10 developers, setting technical direction and fostering a
+      collaborative, high-performing culture.
     </li>
     <li>
-      Worked with clients from the ideation stage to define and refine solutions
-      and concepts before designing and contributing development, checking in with
-      stakeholders to confirm practical solutions and results.
-    </li>
-  </ul>
-  <p class="h-event p-experience">
-    <span class="p-location">Personal Projects & Family Leave</span> <br> 
-    <time class="dt-start" datetime="2023">2023</time> - <time class="dt-end" datetime="now">Present</time>
-  </p>
-  <ul>
-    <li>
-      Dedicated time to improving my award winning plugin, 
-      '<a href="https://death.id.au/cv-05/" rel="noreferrer">Sliding Panes</a> (Andy Matuschak Mode) 
-      - A unique way to view open panes in Obsidian.
+      Partnered with clients from ideation through delivery — defining requirements, refining
+      concepts, and validating solutions with stakeholders at every step.
     </li>
     <li>
-      Developed my own mobile game, <a href="https://death.id.au/cv-04/" rel="noreferrer">Cube Tube</a>
-      - Developing my skills in Ruby and game development methodologies.
-    </li>
-    <li>
-      Provided primary childcare support, effectively managing personal responsibilities while
-      remaining engaged with the latest industry trends and technologies.
+      Helped establish <a href="https://shopfrontsolutions.com.au/" rel="noreferrer">Shopfront Solutions</a>,
+      a digital marketing platform used by 980+ pharmacies and other retailers across Australia.
     </li>
   </ul>
 
+  <div class="page-two">
   <h2>Skills</h2>
-  <ul>
-    <li> <strong>Programming Languages:</strong><br>
-      <span class="p-skill">JavaScript</span>,
-      <span class="p-skill">TypeScript</span>,
-      <span class="p-skill">Ruby</span>,
-      <span class="p-skill">C#</span>,
-      <span class="p-skill">Razor</span>/<span class="p-skill">Blazor</span>,
-      <span class="p-skill">HTML</span>,
-      <span class="p-skill">CSS</span>(/<span class="p-skill">LESS</span>/<span class="p-skill">SASS</span>),
-      <span class="p-skill">Objective-C</span>,
-      <span class="p-skill">PHP</span>
-    </li>
-    <li> <strong>Frameworks &amp; Libraries:</strong><br>
-      <span class="p-skill">React</span>,
-      <span class="p-skill">Angular</span>,
-      <span class="p-skill">Node.js</span>,
-      <span class="p-skill">Bun.js</span>,
-      <span class="p-skill">.NET</span>,
-      <span class="p-skill">jQuery</span>,
-      <span class="p-skill">Express</span>,
-      <span class="p-skill">ASP.NET Core</span>,
-      <span class="p-skill">Vue.js</span>,
-      <span class="p-skill">Handlebars</span>/<span class="p-skill">Nunjucks</span>
-    </li>
-    <li> <strong>Databases:</strong><br>
-      <span class="p-skill">SQL</span> 
-      (<span class="p-skill">PostgreSQL</span>, <span class="p-skill">MySQL</span>, <span class="p-skill">MS SQL</span>),
-      <span class="p-skill">SQLite</span>,
-      <span class="p-skill">Firebase</span>
-    </li>
-    <li> <strong>Cloud Platforms:</strong><br>
-      <span class="p-skill">Azure</span>,
-      <span class="p-skill">AWS</span>,
-      <span class="p-skill">Docker</span>,
-      <span class="p-skill">npm</span>,
-      <span class="p-skill">Cloudflare</span>
-    </li>
-    <li> <strong>Tools &amp; Methodologies:</strong><br>
-      <span class="p-skill">Git</span>,
-      <span class="p-skill">GitHub</span>,
-      <span class="p-skill">Docker</span>,
-      <span class="p-skill">CI/CD</span>,
-      <span class="p-skill">Agile</span>,
-      <span class="p-skill">Scrum</span>,
-      <span class="p-skill">JIRA</span>
-    </li>
-    <li>
-      <strong>Operating Systems:</strong><br>
-      <span class="p-skill">Windows</span>,
-      <span class="p-skill">macOS</span>,
-      <span class="p-skill">Linux</span>,
-      <span class="p-skill">Android</span>,
-      <span class="p-skill">iOS</span>
-    </li>
-    <li> <strong>Other:</strong><br>
-      <span class="p-skill">API Design</span>,
-      <span class="p-skill">System Architecture</span>,
-      <span class="p-skill">Team Leadership</span>,
-      <span class="p-skill">Problem-Solving</span>,
-      <span class="p-skill">Requirements Discovery</span>,
-      <span class="p-skill">Stakeholder communication</span>,
-      <span class="p-skill">UX/UI Refinement</span>
-    </li>
-  </ul>
+  <dl class="skills-grid">
+    <div class="skill-group">
+      <dt>Languages</dt>
+      <dd>
+        <span class="p-skill">JavaScript</span>, <span class="p-skill">TypeScript</span>,
+        <span class="p-skill">PHP</span>, <span class="p-skill">Ruby</span>,
+        <span class="p-skill">C#</span>,
+        <span class="p-skill">Razor</span>/<span class="p-skill">Blazor</span>,
+        <span class="p-skill">HTML</span>, <span class="p-skill">CSS</span>
+        (<span class="p-skill">LESS</span>/<span class="p-skill">SASS</span>),
+        <span class="p-skill">SQL</span>, <span class="p-skill">Objective-C</span>
+      </dd>
+    </div>
+    <div class="skill-group">
+      <dt>Frameworks &amp; Libraries</dt>
+      <dd>
+        <span class="p-skill">React</span>, <span class="p-skill">Vue.js</span>,
+        <span class="p-skill">Angular</span>, <span class="p-skill">Node.js</span>,
+        <span class="p-skill">Bun</span>, <span class="p-skill">Express</span>,
+        <span class="p-skill">.NET</span> / <span class="p-skill">ASP.NET Core</span>,
+        <span class="p-skill">CodeIgniter</span>, <span class="p-skill">Smarty</span>,
+        <span class="p-skill">jQuery</span>,
+        <span class="p-skill">Handlebars</span>/<span class="p-skill">Nunjucks</span>
+      </dd>
+    </div>
+    <div class="skill-group">
+      <dt>Platforms</dt>
+      <dd>
+        <span class="p-skill">CS-Cart</span>,
+        <span class="p-skill">WordPress</span> (<span class="p-skill">Bedrock</span>/<span class="p-skill">Sage</span>),
+        <span class="p-skill">WooCommerce</span>
+      </dd>
+    </div>
+    <div class="skill-group">
+      <dt>Data</dt>
+      <dd>
+        <span class="p-skill">PostgreSQL</span>,
+        <span class="p-skill">MySQL</span>/<span class="p-skill">MariaDB</span>,
+        <span class="p-skill">MS SQL</span>, <span class="p-skill">SQLite</span>,
+        <span class="p-skill">Firebase</span>
+      </dd>
+    </div>
+    <div class="skill-group">
+      <dt>Cloud &amp; DevOps</dt>
+      <dd>
+        <span class="p-skill">Azure</span>, <span class="p-skill">AWS</span>,
+        <span class="p-skill">Cloudflare</span>, <span class="p-skill">Docker</span>,
+        <span class="p-skill">DDEV</span>,
+        <span class="p-skill">CI/CD</span>, <span class="p-skill">Git</span>/<span class="p-skill">GitHub</span>,
+        <span class="p-skill">npm</span>, <span class="p-skill">cPanel</span>/<span class="p-skill">WHM</span>
+      </dd>
+    </div>
+    <div class="skill-group">
+      <dt>Integrations</dt>
+      <dd>
+        <span class="p-skill">Stripe</span>, <span class="p-skill">PayPal</span>,
+        <span class="p-skill">GA4</span> / <span class="p-skill">Google Tag Manager</span>
+      </dd>
+    </div>
+    <div class="skill-group">
+      <dt>AI &amp; Agentic Development</dt>
+      <dd>
+        <span class="p-skill">Claude Code</span>,
+        <span class="p-skill">context engineering</span>,
+        <span class="p-skill">modular agent skills</span>,
+        <span class="p-skill">machine-readable documentation systems</span>,
+        <span class="p-skill">self-hosted Coder workspaces</span>
+      </dd>
+    </div>
+    <div class="skill-group">
+      <dt>Practice</dt>
+      <dd>
+        <span class="p-skill">System Architecture</span>, <span class="p-skill">API Design</span>,
+        <span class="p-skill">Legacy Migration</span>,
+        <span class="p-skill">Incident Response &amp; Root-Cause Analysis</span>,
+        <span class="p-skill">Developer Experience</span>,
+        <span class="p-skill">AI-Assisted Development</span>,
+        <span class="p-skill">Technical Documentation</span>,
+        <span class="p-skill">UX/UI Design</span>, <span class="p-skill">Team Leadership</span>,
+        <span class="p-skill">Agile</span>/<span class="p-skill">Scrum</span>,
+        <span class="p-skill">Stakeholder Management</span>
+      </dd>
+    </div>
+  </dl>
 
-  <h2>Education</h2>
-  <p class="h-event p-education">
-    <span class="p-name">Bachelor of Computer Science for Games Technology</span> <br> 
-    <span class="p-location">La Trobe University</span> <br> 
-    <time class="dt-start" datetime="2004">2004</time> - <time class="dt-end" datetime="2008">2008</time>
-  </p>
+    <h2>Selected Projects</h2>
+    <p class="section-hint">A sample of shipped work — more at <a href="https://death.id.au/cv/#projects">death.id.au/cv</a>.</p>
+    <ul class="projects-list">
+      <li>
+        <strong><a href="https://death.id.au/cv.20/" rel="noreferrer">Just Bricks</a></strong>
+        — Migrated a live LEGO retailer across fifteen sequential CS-Cart major versions
+        and two PHP runtimes, then built its anti-fraud suite: PayPal Card Fields with
+        3-D Secure, and order IP geolocation flagging billing-country mismatches.
+        <span class="proj-tech">PHP · CS-Cart · MySQL · PayPal ACDC</span>
+      </li>
+      <li>
+        <strong><a href="https://death.id.au/cv.21/" rel="noreferrer">Area Safe Products</a></strong>
+        — Rebuilt the B2B checkout for a safety-equipment retailer running three
+        storefronts from one backend: pay-now, quote-request and trading-account paths,
+        a weight-and-freight rate engine, and automatic heavy-item surcharges.
+        <span class="proj-tech">PHP · CS-Cart · Smarty · Stripe</span>
+      </li>
+      <li>
+        <strong><a href="https://death.id.au/cv.22/" rel="noreferrer">Canvas Factory</a></strong>
+        — GA4 / GTM ecommerce tracking for a wall-art store that sells sizes rather than
+        products, using a composite item-ID scheme over an external image catalogue and
+        repairing event integrity across an iframe boundary.
+        <span class="proj-tech">JavaScript · GA4 · GTM · CS-Cart</span>
+      </li>
+      <li>
+        <strong><a href="https://death.id.au/cv.05/" rel="noreferrer">Sliding Panes (Andy Matuschak Mode)</a></strong>
+        — Award-winning open-source Obsidian plugin for a unique stacked-pane view.
+        <span class="proj-tech">JavaScript · CSS</span>
+      </li>
+      <li>
+        <strong><a href="https://deathau.itch.io/cube-tube" rel="noreferrer">Cube Tube</a></strong>
+        — Original 8-bit-style side-scrolling tetromino game, set on a train.
+        <span class="proj-tech">Ruby · Game Dev</span>
+      </li>
+      <li>
+        <strong><a href="https://shopfrontsolutions.com.au/" rel="noreferrer">Shopfront Solutions</a></strong>
+        — SaaS platform for digital and in-store retail marketing.
+        <span class="proj-tech">C# · ASP.NET · JavaScript</span>
+      </li>
+      <li>
+        <strong><a href="https://www.vssec.vic.edu.au/rmtm-challenge-enrichment/" rel="noreferrer">Robotic Mission to Mars</a></strong>
+        — Interactive educational game that controls a real-life robot.
+        <span class="proj-tech">C# · ASP.NET · Computer Vision</span>
+      </li>
+      <li>
+        <strong><a href="https://gtac.edu.au/students/learning-resources/gtacs-immunology-game/" rel="noreferrer">Pathogen Attack!</a></strong>
+        — Educational game exploring the human immune system for GTAC.
+        <span class="proj-tech">JavaScript · HTML · CSS</span>
+      </li>
+      <li>
+        <strong><a href="https://github.com/deathau/LDToypad.NET" rel="noreferrer">LDToypad.NET</a></strong>
+        — Open-source .NET library for the LEGO Dimensions toypad hardware.
+        <span class="proj-tech">.NET · C#</span>
+      </li>
+    </ul>
 
-  <h2>Awards &amp; Recognition</h2>
-  <ul>
-    <li>
-      "Plugin of the Year" award for my <a href="https://death.id.au/cv-05/" rel="noreferrer">Sliding Panes</a> plugin, for Obsidian
-    </li>
-  </ul>
+    <h2>Education</h2>
+    <p class="h-event p-education">
+      <span class="p-name">Bachelor of Computer Science (Games Technology)</span> <br>
+      <span class="p-location">La Trobe University</span> <br>
+      <time class="dt-start" datetime="2004">2004</time> &ndash; <time class="dt-end" datetime="2008">2008</time>
+    </p>
+
+    <h2>Awards &amp; Recognition</h2>
+    <ul>
+      <li>
+        <strong>Plugin of the Year 2020</strong> — awarded to
+        <a href="https://death.id.au/cv.05/" rel="noreferrer">Sliding Panes</a> by the Obsidian community.
+      </li>
+    </ul>
+  </div>
+
 </article>

@@ -30,7 +30,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addCollection("cv", collectionApi =>
     collectionApi.getFilteredByGlob("src/CV. Portfolio/*").filter(item =>
       !(item.data.draft || item.data.type == "draft")
-    ).sort((a,b) => a.data.permalink.localeCompare(b.data.permalink))
+    ).sort((a,b) => b.data.permalink.localeCompare(a.data.permalink))
   )
 
   eleventyConfig.addCollection("longform", function(collectionApi) {

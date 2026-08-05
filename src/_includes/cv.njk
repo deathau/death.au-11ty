@@ -25,9 +25,11 @@ layout: base.njk
           {{ project.data.date | formatDate }}</time>
       </a>
     </aside> 
+    {% if project.data.image %}
     <a href="{{ project.url }}" class="feature_image">
       <img src="{{ project.data.image }}" alt="{% if project.data.image_alt %}{{ project.data.image_alt }}{% else %}{{ project.data.title }}{% endif %}"/>
     </a>
+    {% endif %}
     <h2><a href="{{ project.url }}">{{ project.data.title }} </a></h2>
     <p class="post-excerpt">{{ project.data.summary }}</p>
   </article>
