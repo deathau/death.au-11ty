@@ -349,12 +349,20 @@ main>nav, nav.pagination {
   transform: scaleX(-1);
 }
 
-.p-education, .p-experience {
+.p-education, .p-experience, .p-available {
   font-family: var(--font-code);
   font-weight: var(--font-code-weight);
 }
 
 .p-location {
+  color: var(--color-em);
+}
+
+.p-experience .p-location, .p-education .p-location {
+  color: var(--foreground);
+}
+
+.p-experience .p-name, .p-education .p-name {
   color: var(--color-em);
 }
 
