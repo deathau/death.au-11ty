@@ -922,6 +922,7 @@ blockquote::before {
   .card,
   .extra-pagination,
   nav.pagination,
+  .pdf-link,
   article:not(#resume) {   /* the auto-appended portfolio project cards */
     display: none !important;
   }
