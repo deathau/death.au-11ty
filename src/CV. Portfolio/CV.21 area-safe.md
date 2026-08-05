@@ -4,7 +4,7 @@ image: https://cdn.some.pics/deathau/6a72cda8d879b.png
 type: page
 tags: [PHP,CS-Cart,Smarty,MySQL,JavaScript,Stripe,B2B,eCommerce,Shipping]
 link: https://www.areasafe.com.au/
-summary: A three-path B2B checkout and freight engine, across three storefronts running from one backend.
+summary: A three-path B2B checkout and freight engine, across two storefronts running from one backend.
 permalink: /cv.21/
 template: cv
 date: 2026-03-25
@@ -30,7 +30,7 @@ Same catalogue, same cart, three completely different outcomes — and the sales
 works the quotes and account orders that come out the other end.
 
 The complication was that none of this sat on standard data structures. Order type and
-flow were carried on non-standard` fields, layered over a
+flow were carried on non-standard fields, layered over a
 heavily modified and by-then deprecated multi-step checkout addon. It was not a
 greenfield build; it was a rebuild threaded through several years of accumulated custom
 code, which is the harder and far more common real-world problem. I ended up writing a
