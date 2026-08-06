@@ -64,7 +64,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("stripHtml", function(value) {
     return striptags(value);
   });
-  
+
   eleventyConfig.addFilter("formatDate", function(value) { 
     try{
       const date = new Date(value)
@@ -120,7 +120,7 @@ export default async function(eleventyConfig) {
     language: "en-AU",
     title: "Death.au's Domain",
     description: "Thoughts, stories and ideas.",
-    base: "https://death.id.au",
+    base: "https://www.death.id.au",
     author: {
       name: "Death.au",
       email: "", // Optional
