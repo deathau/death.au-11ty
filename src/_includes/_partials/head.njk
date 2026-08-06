@@ -1,6 +1,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="{{ title | safe }}">
+  {% if summary %}
+  <meta property="og:description" content="{{ summary | safe }}">
+  {% elif emoji %}
+  <meta property="og:description" content="{{ emoji }} {{ content | stripHtml }}">
+  {% endif %}
+  {% ogImage "_includes/og-image.og.njk", {title:title, image:image} %}
   <link rel="icon" href="/favicon.ico">
   <link href="https://unpkg.com/prismjs@1/themes/prism-tomorrow.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/styles.css?v=7">

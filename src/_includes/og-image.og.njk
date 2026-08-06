@@ -1,0 +1,44 @@
+<style>
+  .root {
+    position:absolute;
+    left: 80px;
+    top: 80px;
+    bottom: 80px;
+    right: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #242129;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' %3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='.4' numOctaves='3' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeDropShadow dx='0' dy='0' flood-color='%23888' flood-opacity='.5' stdDeviation='1'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    border-radius: 80px;
+  }
+
+  .border, .glow {
+    position: absolute;
+    left: 77px;
+    top: 77px;
+    bottom: 77px;
+    right: 77px;
+    display: flex;
+    background: linear-gradient(45deg, #e200fb, #461036, #9100ff,#bf72f0, #5600ff, #e000fb, #5d1489, #7c519d,#730275, #934eaf);
+    border-radius: 80px;
+  }
+
+  .glow {
+    filter: blur(50px);
+  }
+
+  .title {
+    color: white;
+    font-size: 100px;
+    margin: auto 0;
+  }
+</style>
+<div class="glow"></div>
+<div class="border"></div>
+<div class="root">
+  <h1 class="title">{{ title | safe }}</h1>
+  <!-- TODO: if emoji, fetch image from flumoji.pages.dev -->
+</div>

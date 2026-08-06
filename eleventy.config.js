@@ -1,9 +1,12 @@
+import { promises as fs } from 'node:fs';
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import EleventyPluginOgImage from 'eleventy-plugin-og-image';
 import ExcerptGenerator from "./_scripts/excerptgenerator.js";
 import markdownIt from "markdown-it";
 import markdownItBracketedSpans from "markdown-it-bracketed-spans";
 import markdownItAttrs from "markdown-it-attrs";
 import cacheBuster from "@mightyplow/eleventy-plugin-cache-buster";
+import striptags from "striptags";
 
 export default async function(eleventyConfig) {
 
@@ -58,6 +61,10 @@ export default async function(eleventyConfig) {
 	});
 
   // Filters
+  eleventyConfig.addFilter("stripHtml", function(value) {
+    return striptags(value);
+  });
+  
   eleventyConfig.addFilter("formatDate", function(value) { 
     try{
       const date = new Date(value)
@@ -137,6 +144,19 @@ export default async function(eleventyConfig) {
   }
 
   eleventyConfig.addPlugin(feedPlugin, { collection, metadata, type: "json", outputPath: "/feed.json" })
+
+  eleventyConfig.addPlugin(EleventyPluginOgImage, {
+    satoriOptions: {
+      fonts: [
+        {
+          name: 'Grenze Gotisch',
+          data: await fs.readFile('GrenzeGotisch.woff'),
+          weight: 400,
+          style: 'normal'
+        }
+      ]
+    }
+  })
 
   const markdownItOptions = {
     html: true,
