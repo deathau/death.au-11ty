@@ -22,7 +22,7 @@ layout: base.njk
       <a href="{{ project.url }}">
         <i class="fa-solid fa-clock"></i>
         <time class="dt-published" datetime="{{ project.data.date | dateISOString }}">
-          {{ project.data.date | formatDate }}</time>
+          {{ project.data.date | formatJustDate }}</time>
       </a>
     </aside> 
     {% if project.data.image %}

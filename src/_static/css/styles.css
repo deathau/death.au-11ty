@@ -343,6 +343,7 @@ main>nav, nav.pagination {
 .pagination-info {
   flex: 1;
   text-align: center;
+  min-width: 3rem;
 }
 
 .mirror {
@@ -1045,4 +1046,48 @@ blockquote::before {
   #resume .p-education,
   #resume .projects-list li,
   #resume .skill-group { break-inside: avoid; page-break-inside: avoid; }
+}
+
+/* Mobile-first responsive tweaks */
+
+
+@media (max-width: 576px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  header>nav {
+    margin-right: auto;
+  }
+  header>.avatar {
+    display: none;
+  }
+  header>h1 {
+    order: 1;
+    margin: 0;
+    font-size: clamp(2.2rem, 4vw + 1rem, 3rem);
+  }
+
+  fedi-social {
+    display:none;
+  }
+
+  ul {
+    padding-inline-start: 20px;
+  }
+
+  article, main.page, main.home, main.cv, main > nav, .extra-pagination, .card {
+    margin: 2em auto;
+    padding: 1.5em;
+  }
+
+  .cv-resume .skills-grid {
+    max-width: calc(100% - 3em);
+  }
+
+  .cv-resume .proj-tech {
+    display: block;
+    white-space: normal;
+  }
 }
