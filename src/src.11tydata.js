@@ -2,7 +2,7 @@ export default {
     language: "en-AU",
     title: "Death.au's Domain",
     subtitle: "Thoughts, stories and ideas.",
-    base: "https://death.id.au/",
+    base: "https://www.death.id.au/",
     // author: {
     //   name: "Death.au",
     //   // email: "", // Optional
