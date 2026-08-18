@@ -5,7 +5,7 @@ location: /msz8mu28
 permalink: /n.msz8mu28/
 emoji: 🤷
 background: "#ffdbe4"
-external_url: null
+external_url: https://death.id.au/objects/186d4c09-706a-84d9-7063-952348733614
 status_url: https://deathau.status.lol/6a84dd6eee861
 author: deathau
 dark_background: "#240300"
