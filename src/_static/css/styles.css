@@ -111,6 +111,10 @@ article img+img {
   max-width: 32.9%;
 }
 
+.post-emoji ~ p img {
+  max-width: calc(100% - 7rem);
+}
+
 main.page {
   display: block;
 }
