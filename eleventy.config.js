@@ -114,6 +114,18 @@ export default async function(eleventyConfig) {
     return this.ctx[varString];
   });
 
+  eleventyConfig.addFilter("cleanPlanText", function(value) {
+    if (!value) return "";
+    
+    // 1. Strip the {last-updated} literal tag
+    let cleaned = value.replace(/\{last-updated\}/gi, "");
+    
+    // 2. Match emojis followed by any optional trailing whitespace
+    cleaned = cleaned.replace(/(?:\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F|[\u200d\u2049\u203c\u3030\u303d\u2139\u2122\u3297\u3299])\s*/gu, "");
+    
+    return cleaned;
+  });
+
 
   // global data
   const metadata = {
